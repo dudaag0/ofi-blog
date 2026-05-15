@@ -104,86 +104,26 @@ async function createConfig() {
         },
         items: [
           {
-            to: 'playground',
+            to: 'leistungskurs',
             position: 'left',
-            label: 'Playground'
+            label: 'Leistungskurs'
           },
-          {to: 'news', label: 'News', position: 'left'},
-          {
-            to: 'login',
-            position: 'right',
-            label: '🔑'
-          }
         ]
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Tools',
-            items: [
-              {
-                label: 'VS Code',
-                to: 'https://code.visualstudio.com/'
-              },
-              {
-                label: 'Python',
-                to: 'https://www.python.org/'
-              }
-            ]
-          },
-          {
-            title: 'Links',
-            items: [
-              {
-                label: 'Troubleshooting Office 365',
-                to: '/troubleshooting',
-              },
-              {
-                label: 'Jupyterhub',
-                to: 'https://jupyter.gbsl.website',
-              }
-            ],
-          },
-          {
-            title: 'Gymnasium',
-            items: [
-              {
-                label: 'Passwort Zurücksetzen',
-                to: 'https://password.edubern.ch/'
-              },
-              {
-                label: 'Office 365',
-                to: 'https://office.com',
-              },
-              {
-                label: 'GBSL',
-                to: 'https://gbsl.ch',
-              },
-              {
-                label: 'Intranet',
-                to: 'https://erzbe.sharepoint.com/sites/GYMB/gbs'
-              },
-              {
-                label: 'Stundenplan',
-                to: 'https://mese.webuntis.com/WebUntis/?school=gym_Biel-Bienne#/basic/main',
-              },
-            ],
-          }
-        ],
         copyright: `<a 
                       class="footer__link-item"
                       href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de"
                     >
                       <img src="${BASE_URL}img/by-nc-sa.eu.svg" alt="CC-BY-NC-SA"> 
-                      Text und Bilder von Balthasar Hofer, Ausnahmen sind gekennzeichnet. 
+                      Silas Berger, geändert Annika Greif. 
                     </a>
                     <br />
                     <a 
                       class="badge badge--primary"
                       href="https://github.com/lebalz/ofi-blog/commit/${GIT_COMMIT_SHA}"
                     >
-                      <i class="mdi mdi-source-commit mdi-rotate-90"></i> ${GIT_COMMIT_SHA.substring(0, 7)}
                     </a>`
       },
       prism: {
