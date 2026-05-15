@@ -65,13 +65,13 @@ if (process.env.UMAMI_SRC && process.env.UMAMI_ID) {
 async function createConfig() {
   return {
     title: 'Informatik',    
-    tagline: 'Gymnasium Biel Seeland',
+    tagline: 'Gymnasium Ettenheim',
     url: process.env.DOMAIN || 'http://localhost:3000',
     baseUrl: BASE_URL,
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
-    organizationName: 'lebalz', // Usually your GitHub org/user name.
+    organizationName: 'dudaag0', // Usually your GitHub org/user name.
     projectName: process.env.GH_PROJECT || 'ofi-blog', // Usually your repo name.
     deploymentBranch: 'gh-pages',
     trailingSlash: false,
@@ -110,69 +110,10 @@ async function createConfig() {
             position: 'left',
             label: 'Playground'
           },
-          {to: 'news', label: 'News', position: 'left'},
-          {
-            to: 'login',
-            position: 'right',
-            label: '🔑'
-          }
         ]
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Tools',
-            items: [
-              {
-                label: 'VS Code',
-                to: 'https://code.visualstudio.com/'
-              },
-              {
-                label: 'Python',
-                to: 'https://www.python.org/'
-              }
-            ]
-          },
-          {
-            title: 'Links',
-            items: [
-              {
-                label: 'Troubleshooting Office 365',
-                to: '/troubleshooting',
-              },
-              {
-                label: 'Jupyterhub',
-                to: 'https://jupyter.gbsl.website',
-              }
-            ],
-          },
-          {
-            title: 'Gymnasium',
-            items: [
-              {
-                label: 'Passwort Zurücksetzen',
-                to: 'https://password.edubern.ch/'
-              },
-              {
-                label: 'Office 365',
-                to: 'https://office.com',
-              },
-              {
-                label: 'GBSL',
-                to: 'https://gbsl.ch',
-              },
-              {
-                label: 'Intranet',
-                to: 'https://erzbe.sharepoint.com/sites/GYMB/gbs'
-              },
-              {
-                label: 'Stundenplan',
-                to: 'https://mese.webuntis.com/WebUntis/?school=gym_Biel-Bienne#/basic/main',
-              },
-            ],
-          }
-        ],
         copyright: `<a 
                       class="footer__link-item"
                       href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de"

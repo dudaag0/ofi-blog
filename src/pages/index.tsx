@@ -5,10 +5,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.scss';
 import HomepageCourses from '../components/HomepageCourses';
 import ImageGallery from 'react-image-gallery';
-import { Content } from "@theme/BlogPostPage";
-import BlogPostItem from "@theme/BlogPostItem";
-// @ts-ignore
-import { BlogPostProvider } from "@docusaurus/theme-common/internal";
 
 function HomepageHeader() {
     const { siteConfig } = useDocusaurusContext();
@@ -21,11 +17,9 @@ function HomepageHeader() {
         </header>
     );
 }
-interface Props {
-    readonly recentPosts: readonly { readonly content: Content }[];
-}
 
-export default function Home({ recentPosts }: Props) {
+
+export default function Home() {
     const images = [
         {
             original: './img/index/artificial-intelligence.jpg',
@@ -64,25 +58,6 @@ export default function Home({ recentPosts }: Props) {
                     />
                 </div>
                 <HomepageCourses />
-                <div className={clsx(styles.news, 'no-comments')}>
-                    <div className={clsx("container")}>
-                        <h3 id="new-tipps-tricks">Neuigkeiten, Tipps und Tricks</h3>
-                        <div className={clsx(styles.row, "row")}>
-                            {recentPosts?.map(({ content: BlogPostContent }, idx) => (
-                                <div className={clsx(styles.col, "col col--4")} key={idx}>
-                                    <BlogPostProvider
-                                        key={BlogPostContent.metadata.permalink}
-                                        content={BlogPostContent}
-                                    >
-                                        <BlogPostItem>
-                                            <BlogPostContent />
-                                        </BlogPostItem>
-                                    </BlogPostProvider>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
             </main>
         </Layout>
     );
