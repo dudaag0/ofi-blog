@@ -151,10 +151,10 @@ async function createConfig() {
             // Please change this to your repo.
             editUrl: (params) => {
               if (params.version === 'current') {
-                return `https://dudaag0.github.io/edit/main/${params.versionDocsDirPath}/${params.docPath}`
+                return `https://github.com/dudaag0/ofi-blog/edit/main/${params.versionDocsDirPath}/${params.docPath}`
               }
               if (params.version === '24ef') {
-                return 'https://dudaag0.github.io/ofi-blog/tree/main/docs'
+                return 'https://github.com/dudaag0/ofi-blog/tree/main/docs'
               }
             },
             path: 'docs',
