@@ -104,7 +104,7 @@ async function createConfig() {
         },
         items: [
           {
-            to: 'leistungskurs',
+            to: 'Leistungskurs',
             position: 'left',
             label: 'Leistungskurs'
           },
@@ -150,10 +150,10 @@ async function createConfig() {
             // Please change this to your repo.
             editUrl: (params) => {
               if (params.version === 'current') {
-                return `https://github.com/lebalz/ofi-blog/edit/main/${params.versionDocsDirPath}/${params.docPath}`
+                return `https://dudaag0.github.io/ofi-blog/edit/main/${params.versionDocsDirPath}/${params.docPath}`
               }
               if (params.version === '24ef') {
-                return 'https://github.com/lebalz/ofi-blog/tree/main/docs'
+                return 'https://dudaag0.github.io/ofi-blog/tree/main/docs'
               }
             },
             path: 'docs',
@@ -217,62 +217,6 @@ async function createConfig() {
       'docusaurus-plugin-sass',
       '@saucelabs/theme-github-codeblock',
       './src/plugins/brython-source.js',
-      [
-        './src/plugins/blog-plugin.js',
-        {
-          blogTitle: 'News',
-          routeBasePath: 'news',
-          path: 'news',
-          showReadingTime: true,
-          blogSidebarCount: 'ALL',
-          postsPerPage: 15,
-          blogSidebarTitle: 'News',
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/lebalz/ofi-blog/edit/main/',
-          admonitions: admonitionConfig,
-          beforeDefaultRemarkPlugins: [
-            remarkKbd,
-            remarkLinks,
-            remarkImg2Fig,
-            [remarkUnderline, { marker: '__', classNames: ['underline'], tagType: 'strong' }]
-          ],
-          remarkPlugins: [
-            math,
-            remarkDeflist,
-            remarkMdi,
-            [remarkDetails, { marker: ':::', tags: ['details'], classNameMap: { details: undefined } }],
-            remarkFlex,
-            remarkComments
-          ],
-          rehypePlugins: [katex]
-        },
-      ],
-      // function (context, options) {
-      //   return  {
-      //     name: 'polyfills-for-react-live',
-      //     configureWebpack(config, isServer, utils) {
-      //       return {
-      //         resolve: {
-      //           alias: {
-      //             path: require.resolve('path-browserify'),
-      //           },
-      //           fallback: {
-      //             fs: false,
-      //             url: require.resolve("url/"),
-      //             os: require.resolve('os-browserify/browser'),
-      //             util: require.resolve("util/"),
-      //             assert: require.resolve("assert/"),
-      //             stream: require.resolve("stream-browserify"),
-      //             buffer: require.resolve("buffer/"),
-      //             crypto: require.resolve("crypto-browserify"),
-      //             constants: require.resolve("constants-browserify")
-      //           }
-      //         }
-      //       }
-      //     }
-      //   }
-      // },
       function (context, options) {
         return {
           name: 'raw-src-loader',
@@ -327,36 +271,6 @@ async function createConfig() {
           }
         }
       },
-      // function (context, options) {
-      //   return {
-      //     name: 'watch-presentations',
-      //     getPathsToWatch() {
-      //       const staticPath = path.resolve(context.siteDir, 'static');
-      //       return [`${staticPath}/p/*.{md, html}`];
-      //     }
-      //   };
-      // },
-      // function (context, options) {
-      //   return {
-      //     name: 'watch-presentations',
-      //     configureWebpack(config, isServer, utils) {
-      //       return {
-      //         devServer: {
-      //           watchFiles: ['presentations/**/*'],
-      //           // watchFiles: {
-      //           //   paths: [path.join(__dirname, 'static/p/**/*.js'), path.join(__dirname, 'static/p/**/*.md'), path.join(__dirname, 'static/p/**/*.html'), path.join(__dirname, 'static/p/**/*.css'), path.join(__dirname, 'static/p/**/*.scss')],
-      //           //   // options: {
-      //           //   //   cwd: '.'
-      //           //   // }
-      //           // },
-      //           // static: {
-      //           //   directory: path.join(__dirname, 'static'),
-      //           // }
-      //         },
-      //       };
-      //     },
-      //   };
-      // },
       function (context, options) {
         return {
           name: 'pdf-src-loader',
