@@ -21,7 +21,7 @@ const admonitionConfig = {
   keywords: ['note', 'tip', 'info', 'caution', 'danger', 'important', 'success', 'secondary', 'aufgabe', 'def', 'warning', 'warn', 'finding'],
 };
 
-const BASE_URL = '/';
+const BASE_URL = '/ofi-blog/';
 const GIT_COMMIT_SHA = process.env.DRONE_COMMIT_SHA || Math.random().toString(36).substring(7);
 const OFFLINE_MODE = process.env.OFFLINE_MODE || false;
 const VERSIONS = {
@@ -53,7 +53,7 @@ if (process.env.UMAMI_SRC && process.env.UMAMI_ID) {
     {
       src: process.env.UMAMI_SRC,
       ['data-website-id']: process.env.UMAMI_ID,
-      ['data-domains']: (process.env.DOMAIN || 'http://localhost:3000').split('/').filter(w => !!w)[1],
+      ['data-domains']: (process.env.DOMAIN || 'https://dudaag0.github.io').split('/').filter(w => !!w)[1],
       async: true,
       defer: true
     }
@@ -65,21 +65,19 @@ if (process.env.UMAMI_SRC && process.env.UMAMI_ID) {
 async function createConfig() {
   return {
     title: 'Informatik',    
-    tagline: 'Gymnasium Biel Seeland',
-    url: process.env.DOMAIN || 'http://localhost:3000',
+    tagline: 'Gymnasium Ettenheim',
+    url: process.env.DOMAIN || 'https://dudaag0.github.io',
     baseUrl: BASE_URL,
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
-    organizationName: 'lebalz', // Usually your GitHub org/user name.
     projectName: process.env.GH_PROJECT || 'ofi-blog', // Usually your repo name.
-    deploymentBranch: 'gh-pages',
     trailingSlash: false,
     customFields: {
       GIT_COMMIT_SHA: GIT_COMMIT_SHA,
       DOCS_ONLY: process.env.DOCS_ONLY || false,
       AZURE_CLIENT_ID: process.env.AZURE_CLIENT_ID || 'no-id',
-      DOMAIN: process.env.DOMAIN || 'http://localhost:3000',
+      DOMAIN: process.env.DOMAIN || 'https://dudaag0.github.io',
       OFFLINE_MODE: OFFLINE_MODE
     },
     i18n: {
