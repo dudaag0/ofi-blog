@@ -102,13 +102,7 @@ async function createConfig() {
           alt: 'Logo',
           src: 'img/logo.png',
         },
-        items: [
-          {
-            to: 'Leistungskurs',
-            position: 'left',
-            label: 'Leistungskurs'
-          },
-        ]
+        
       },
       footer: {
         style: 'dark',
