@@ -53,7 +53,7 @@ if (process.env.UMAMI_SRC && process.env.UMAMI_ID) {
     {
       src: process.env.UMAMI_SRC,
       ['data-website-id']: process.env.UMAMI_ID,
-      ['data-domains']: (process.env.DOMAIN || 'https://github.com/DuDaAG0').split('/').filter(w => !!w)[1],
+      ['data-domains']: (process.env.DOMAIN || 'http://localhost:3000').split('/').filter(w => !!w)[1],
       async: true,
       defer: true
     }
