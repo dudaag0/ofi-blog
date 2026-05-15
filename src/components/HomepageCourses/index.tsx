@@ -21,14 +21,14 @@ const CourseList: Course[] = [
 
 if (!DOCS_ONLY) {
   CourseList.push({
-    title: 'Gym 2',
+    title: 'Leistungskurs',
     classes: [
-      '26e',
-      '26P'
+      '11',
+      '12'
     ]
   });
   CourseList.push({
-    title: 'Gym 4',
+    title: 'Klasse 9',
     classes: [
       {
         uri: '24ef/home',
@@ -38,23 +38,6 @@ if (!DOCS_ONLY) {
   });  
 }
 
-CourseList.push({
-    title: 'Ehemalige',
-    classes: [
-      {
-        uri: 'https://ofi.24.gbsl.website',
-        label: '24'
-      },
-      {
-        uri: 'https://ofi.25.gbsl.website/25h/home',
-        label: '25h'
-      },
-      {
-        uri: 'https://ofi.25.gbsl.website/24w/home',
-        label: '24w'
-      },
-    ]
-  });
 
 // const CourseComponent = (course: Course) => {
 const CourseComponent = ({ course }: {course: Course}) => {
