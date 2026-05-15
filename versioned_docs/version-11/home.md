@@ -8,3 +8,4 @@ sidebar_custom_props:
 
 # Informatik 11
 
+Herzlich willkommen!

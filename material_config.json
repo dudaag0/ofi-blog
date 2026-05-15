@@ -6,21 +6,6 @@
       "ignore": []
     },
     {
-      "from": "docs/Programmieren-1/00-Lernziele.md",
-      "to": "versioned_docs/version-11/03-Programmieren-1/00-Lernziele.md",
-      "ignore": []
-    },
-    {
-      "from": "docs/byod-basics/v26/",
-      "to": "versioned_docs/version-11/02-BYOD",
-      "ignore": []
-    },
-    {
-      "from": "docs/Programmieren-1/01-Algorithmen/",
-      "to": "versioned_docs/version-11/03-Programmieren-1/01-Algorithmen",
-      "ignore": []
-    },
-    {
       "from": "docs/Programmieren-1/02-Turtlegrafik/images/",
       "to": "versioned_docs/version-11/03-Programmieren-1/02-Turtlegrafik/images",
       "ignore": []
@@ -34,13 +19,6 @@
       "from": "docs/Programmieren-1/02-Turtlegrafik/002-screen.md",
       "to": "versioned_docs/version-11/03-Programmieren-1/02-Turtlegrafik/002-screen.md",
       "ignore": []
-    },
-    {
-      "from": "docs/dokumente/ms-word/",
-      "to": "versioned_docs/version-11/05-Texte",
-      "ignore": [
-        "04-Uebung.md"
-      ]
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/003-repeat.md",
@@ -180,21 +158,6 @@
       "ignore": []
     },
     {
-      "from": "docs/Programmieren-1/00-Lernziele.md",
-      "to": "versioned_docs/version-12/03-Programmieren-1/00-Lernziele.md",
-      "ignore": []
-    },
-    {
-      "from": "docs/byod-basics/v26/",
-      "to": "versioned_docs/version-12/02-BYOD",
-      "ignore": []
-    },
-    {
-      "from": "docs/Programmieren-1/01-Algorithmen/",
-      "to": "versioned_docs/version-12/03-Programmieren-1/01-Algorithmen",
-      "ignore": []
-    },
-    {
       "from": "docs/Programmieren-1/02-Turtlegrafik/images/",
       "to": "versioned_docs/version-12/03-Programmieren-1/02-Turtlegrafik/images",
       "ignore": []
@@ -208,13 +171,6 @@
       "from": "docs/Programmieren-1/02-Turtlegrafik/002-screen.md",
       "to": "versioned_docs/version-12/03-Programmieren-1/02-Turtlegrafik/002-screen.md",
       "ignore": []
-    },
-    {
-      "from": "docs/dokumente/ms-word/",
-      "to": "versioned_docs/version-12/05-Texte",
-      "ignore": [
-        "04-Uebung.md"
-      ]
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/003-repeat.md",
@@ -436,6 +392,21 @@
       "to": "versioned_docs/version-24ef/04-Robotik",
       "ignore": [],
       "open": true
+    },
+    {
+      "from": "docs/Codes-and-Data/",
+      "to": "versioned_docs/version-24ef/Daten und Codierung",
+      "ignore": []
+    },
+    {
+      "from": "docs/Computer/",
+      "to": "versioned_docs/version-24ef/Computer",
+      "ignore": []
+    },
+    {
+      "from": "docs/Kryptologie/",
+      "to": "versioned_docs/version-24ef/Kryptologie",
+      "ignore": []
     }
   ]
 }
