@@ -220,37 +220,7 @@ async function createConfig() {
       'docusaurus-plugin-sass',
       '@saucelabs/theme-github-codeblock',
       './src/plugins/brython-source.js',
-      [
-        './src/plugins/blog-plugin.js',
-        {
-          blogTitle: 'News',
-          routeBasePath: 'news',
-          path: 'news',
-          showReadingTime: true,
-          blogSidebarCount: 'ALL',
-          postsPerPage: 15,
-          blogSidebarTitle: 'News',
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/lebalz/ofi-blog/edit/main/',
-          admonitions: admonitionConfig,
-          beforeDefaultRemarkPlugins: [
-            remarkKbd,
-            remarkLinks,
-            remarkImg2Fig,
-            [remarkUnderline, { marker: '__', classNames: ['underline'], tagType: 'strong' }]
-          ],
-          remarkPlugins: [
-            math,
-            remarkDeflist,
-            remarkMdi,
-            [remarkDetails, { marker: ':::', tags: ['details'], classNameMap: { details: undefined } }],
-            remarkFlex,
-            remarkComments
-          ],
-          rehypePlugins: [katex]
-        },
-      ],
+      
       // function (context, options) {
       //   return  {
       //     name: 'polyfills-for-react-live',
