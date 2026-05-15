@@ -53,7 +53,7 @@ if (process.env.UMAMI_SRC && process.env.UMAMI_ID) {
     {
       src: process.env.UMAMI_SRC,
       ['data-website-id']: process.env.UMAMI_ID,
-      ['data-domains']: (process.env.DOMAIN || 'https://github.com/DuDaAG0/ofi-blog').split('/').filter(w => !!w)[1],
+      ['data-domains']: (process.env.DOMAIN || 'https://github.com/DuDaAG0').split('/').filter(w => !!w)[1],
       async: true,
       defer: true
     }
@@ -66,18 +66,19 @@ async function createConfig() {
   return {
     title: 'Informatik',    
     tagline: 'Gymnasium Ettenheim',
-    url: process.env.DOMAIN || 'https://github.com/DuDaAG0/ofi-blog',
+    url: process.env.DOMAIN || 'http://localhost:3000',
     baseUrl: BASE_URL,
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
+    organizationName: 'dudaag0', // Usually your GitHub org/user name.
     projectName: process.env.GH_PROJECT || 'ofi-blog', // Usually your repo name.
     trailingSlash: false,
     customFields: {
       GIT_COMMIT_SHA: GIT_COMMIT_SHA,
       DOCS_ONLY: process.env.DOCS_ONLY || false,
       AZURE_CLIENT_ID: process.env.AZURE_CLIENT_ID || 'no-id',
-      DOMAIN: process.env.DOMAIN || 'https://github.com/DuDaAG0/ofi-blog',
+      DOMAIN: process.env.DOMAIN || 'http://localhost:3000',
       OFFLINE_MODE: OFFLINE_MODE
     },
     i18n: {
@@ -104,7 +105,7 @@ async function createConfig() {
         },
         items: [
           {
-            to: 'src/pages/leistungskurs',
+            to: '/leistungskurs',
             position: 'left',
             label: 'Leistungskurs'
           },
@@ -150,7 +151,7 @@ async function createConfig() {
             // Please change this to your repo.
             editUrl: (params) => {
               if (params.version === 'current') {
-                return `https://dudaag0.github.io/ofi-blog/edit/main/${params.versionDocsDirPath}/${params.docPath}`
+                return `https://dudaag0.github.io/edit/main/${params.versionDocsDirPath}/${params.docPath}`
               }
               if (params.version === '24ef') {
                 return 'https://dudaag0.github.io/ofi-blog/tree/main/docs'
