@@ -65,14 +65,15 @@ if (process.env.UMAMI_SRC && process.env.UMAMI_ID) {
 async function createConfig() {
   return {
     title: 'Informatik',    
-    tagline: 'Gymnasium Ettenheim',
+    tagline: 'Gymnasium Biel Seeland',
     url: process.env.DOMAIN || 'http://localhost:3000',
     baseUrl: BASE_URL,
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
-    organizationName: 'dudaag0', // Usually your GitHub org/user name.
+    organizationName: 'lebalz', // Usually your GitHub org/user name.
     projectName: process.env.GH_PROJECT || 'ofi-blog', // Usually your repo name.
+    deploymentBranch: 'gh-pages',
     trailingSlash: false,
     customFields: {
       GIT_COMMIT_SHA: GIT_COMMIT_SHA,
@@ -105,26 +106,86 @@ async function createConfig() {
         },
         items: [
           {
-            to: '/leistungskurs',
+            to: 'playground',
             position: 'left',
-            label: 'Leistungskurs'
+            label: 'Playground'
           },
+          {to: 'news', label: 'News', position: 'left'},
+          {
+            to: 'login',
+            position: 'right',
+            label: '🔑'
+          }
         ]
       },
       footer: {
         style: 'dark',
+        links: [
+          {
+            title: 'Tools',
+            items: [
+              {
+                label: 'VS Code',
+                to: 'https://code.visualstudio.com/'
+              },
+              {
+                label: 'Python',
+                to: 'https://www.python.org/'
+              }
+            ]
+          },
+          {
+            title: 'Links',
+            items: [
+              {
+                label: 'Troubleshooting Office 365',
+                to: '/troubleshooting',
+              },
+              {
+                label: 'Jupyterhub',
+                to: 'https://jupyter.gbsl.website',
+              }
+            ],
+          },
+          {
+            title: 'Gymnasium',
+            items: [
+              {
+                label: 'Passwort Zurücksetzen',
+                to: 'https://password.edubern.ch/'
+              },
+              {
+                label: 'Office 365',
+                to: 'https://office.com',
+              },
+              {
+                label: 'GBSL',
+                to: 'https://gbsl.ch',
+              },
+              {
+                label: 'Intranet',
+                to: 'https://erzbe.sharepoint.com/sites/GYMB/gbs'
+              },
+              {
+                label: 'Stundenplan',
+                to: 'https://mese.webuntis.com/WebUntis/?school=gym_Biel-Bienne#/basic/main',
+              },
+            ],
+          }
+        ],
         copyright: `<a 
                       class="footer__link-item"
                       href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de"
                     >
                       <img src="${BASE_URL}img/by-nc-sa.eu.svg" alt="CC-BY-NC-SA"> 
-                      Silas Berger, geändert Annika Greif. 
+                      Text und Bilder von Balthasar Hofer, Ausnahmen sind gekennzeichnet. 
                     </a>
                     <br />
                     <a 
                       class="badge badge--primary"
                       href="https://github.com/lebalz/ofi-blog/commit/${GIT_COMMIT_SHA}"
                     >
+                      <i class="mdi mdi-source-commit mdi-rotate-90"></i> ${GIT_COMMIT_SHA.substring(0, 7)}
                     </a>`
       },
       prism: {
@@ -218,6 +279,62 @@ async function createConfig() {
       'docusaurus-plugin-sass',
       '@saucelabs/theme-github-codeblock',
       './src/plugins/brython-source.js',
+      [
+        './src/plugins/blog-plugin.js',
+        {
+          blogTitle: 'News',
+          routeBasePath: 'news',
+          path: 'news',
+          showReadingTime: true,
+          blogSidebarCount: 'ALL',
+          postsPerPage: 15,
+          blogSidebarTitle: 'News',
+          // Please change this to your repo.
+          editUrl:
+            'https://github.com/lebalz/ofi-blog/edit/main/',
+          admonitions: admonitionConfig,
+          beforeDefaultRemarkPlugins: [
+            remarkKbd,
+            remarkLinks,
+            remarkImg2Fig,
+            [remarkUnderline, { marker: '__', classNames: ['underline'], tagType: 'strong' }]
+          ],
+          remarkPlugins: [
+            math,
+            remarkDeflist,
+            remarkMdi,
+            [remarkDetails, { marker: ':::', tags: ['details'], classNameMap: { details: undefined } }],
+            remarkFlex,
+            remarkComments
+          ],
+          rehypePlugins: [katex]
+        },
+      ],
+      // function (context, options) {
+      //   return  {
+      //     name: 'polyfills-for-react-live',
+      //     configureWebpack(config, isServer, utils) {
+      //       return {
+      //         resolve: {
+      //           alias: {
+      //             path: require.resolve('path-browserify'),
+      //           },
+      //           fallback: {
+      //             fs: false,
+      //             url: require.resolve("url/"),
+      //             os: require.resolve('os-browserify/browser'),
+      //             util: require.resolve("util/"),
+      //             assert: require.resolve("assert/"),
+      //             stream: require.resolve("stream-browserify"),
+      //             buffer: require.resolve("buffer/"),
+      //             crypto: require.resolve("crypto-browserify"),
+      //             constants: require.resolve("constants-browserify")
+      //           }
+      //         }
+      //       }
+      //     }
+      //   }
+      // },
       function (context, options) {
         return {
           name: 'raw-src-loader',
@@ -272,6 +389,36 @@ async function createConfig() {
           }
         }
       },
+      // function (context, options) {
+      //   return {
+      //     name: 'watch-presentations',
+      //     getPathsToWatch() {
+      //       const staticPath = path.resolve(context.siteDir, 'static');
+      //       return [`${staticPath}/p/*.{md, html}`];
+      //     }
+      //   };
+      // },
+      // function (context, options) {
+      //   return {
+      //     name: 'watch-presentations',
+      //     configureWebpack(config, isServer, utils) {
+      //       return {
+      //         devServer: {
+      //           watchFiles: ['presentations/**/*'],
+      //           // watchFiles: {
+      //           //   paths: [path.join(__dirname, 'static/p/**/*.js'), path.join(__dirname, 'static/p/**/*.md'), path.join(__dirname, 'static/p/**/*.html'), path.join(__dirname, 'static/p/**/*.css'), path.join(__dirname, 'static/p/**/*.scss')],
+      //           //   // options: {
+      //           //   //   cwd: '.'
+      //           //   // }
+      //           // },
+      //           // static: {
+      //           //   directory: path.join(__dirname, 'static'),
+      //           // }
+      //         },
+      //       };
+      //     },
+      //   };
+      // },
       function (context, options) {
         return {
           name: 'pdf-src-loader',
