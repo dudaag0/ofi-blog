@@ -1,115 +1,115 @@
 {
-  "26e": [
+  "11": [
     {
       "from": "docs/ICT/",
-      "to": "versioned_docs/version-26e/01-ICT-Grundlagen",
+      "to": "versioned_docs/version-11/01-ICT-Grundlagen",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/00-Lernziele.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/00-Lernziele.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/00-Lernziele.md",
       "ignore": []
     },
     {
       "from": "docs/byod-basics/v26/",
-      "to": "versioned_docs/version-26e/02-BYOD",
+      "to": "versioned_docs/version-11/02-BYOD",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/01-Algorithmen/",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/01-Algorithmen",
+      "to": "versioned_docs/version-11/03-Programmieren-1/01-Algorithmen",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/images/",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/02-Turtlegrafik/images",
+      "to": "versioned_docs/version-11/03-Programmieren-1/02-Turtlegrafik/images",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/001-intro.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/02-Turtlegrafik/001-intro.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/02-Turtlegrafik/001-intro.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/002-screen.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/02-Turtlegrafik/002-screen.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/02-Turtlegrafik/002-screen.md",
       "ignore": []
     },
     {
       "from": "docs/dokumente/ms-word/",
-      "to": "versioned_docs/version-26e/05-Texte",
+      "to": "versioned_docs/version-11/05-Texte",
       "ignore": [
         "04-Uebung.md"
       ]
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/003-repeat.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/02-Turtlegrafik/003-repeat.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/02-Turtlegrafik/003-repeat.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/100-turtle-commands.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/02-Turtlegrafik/100-turtle-commands.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/02-Turtlegrafik/100-turtle-commands.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/004-errors.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/02-Turtlegrafik/004-errors.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/02-Turtlegrafik/004-errors.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/005-functions.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/02-Turtlegrafik/005-functions.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/02-Turtlegrafik/005-functions.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/006-functions-params.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/02-Turtlegrafik/006-functions-params.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/02-Turtlegrafik/006-functions-params.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/007-variablen.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/02-Turtlegrafik/007-variablen.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/02-Turtlegrafik/007-variablen.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/008-verzweigung.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/02-Turtlegrafik/008-verzweigung.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/02-Turtlegrafik/008-verzweigung.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/009-while.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/02-Turtlegrafik/009-while.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/02-Turtlegrafik/009-while.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/03-Python/03-gruefnisch-beavis.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/03-gruefnisch.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/03-gruefnisch.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/03-Python/04-random-walk.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/04-random-walk.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/04-random-walk.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/03-Python/images/",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/images",
+      "to": "versioned_docs/version-11/03-Programmieren-1/images",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/050-repetition/",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/10-repetition",
+      "to": "versioned_docs/version-11/03-Programmieren-1/10-repetition",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/052-xmas.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/05-weihnachten.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/05-weihnachten.md",
       "ignore": []
     },
     {
       "from": "docs/Codes-and-Data/",
-      "to": "versioned_docs/version-26e/06-Codierung",
+      "to": "versioned_docs/version-11/06-Codierung",
       "ignore": [
         "00-Lernziele-26P.md",
         "02-Grafikformate-v24",
@@ -119,24 +119,24 @@
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/010-koch.md",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/02-Turtlegrafik/10-rekursion.md",
+      "to": "versioned_docs/version-11/03-Programmieren-1/02-Turtlegrafik/10-rekursion.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/04-Testumgebung/26eP-test/",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/00-Probe",
+      "to": "versioned_docs/version-11/03-Programmieren-1/00-Probe",
       "ignore": [
         "ProbeP.md"
       ]
     },
     {
       "from": "docs/pgzero/",
-      "to": "versioned_docs/version-26e/03-Programmieren-1/05-PyGameZero",
+      "to": "versioned_docs/version-11/03-Programmieren-1/05-PyGameZero",
       "ignore": []
     },
     {
       "from": "docs/Big-Data/",
-      "to": "versioned_docs/version-26e/07-Big-Data",
+      "to": "versioned_docs/version-11/07-Big-Data",
       "ignore": [
         "03-cookies.md"
       ],
@@ -144,13 +144,13 @@
     },
     {
       "from": "docs/Excel/",
-      "to": "versioned_docs/version-26e/08-Excel",
+      "to": "versioned_docs/version-11/08-Excel",
       "ignore": [],
       "open": false
     },
     {
       "from": "docs/Datenbanken-of/",
-      "to": "versioned_docs/version-26e/09-Datenbanken",
+      "to": "versioned_docs/version-11/09-Datenbanken",
       "ignore": [
         "index.md",
         "01-sql/04-create.md",
@@ -161,7 +161,7 @@
     },
     {
       "from": "docs/Netzwerke-of/",
-      "to": "versioned_docs/version-26e/10-Netzwerke",
+      "to": "versioned_docs/version-11/10-Netzwerke",
       "ignore": [
         "002-Codierung",
         "003-Routing",
@@ -173,122 +173,122 @@
       "open": true
     }
   ],
-  "26P": [
+  "12": [
     {
       "from": "docs/ICT/",
-      "to": "versioned_docs/version-26P/01-ICT-Grundlagen",
+      "to": "versioned_docs/version-12/01-ICT-Grundlagen",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/00-Lernziele.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/00-Lernziele.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/00-Lernziele.md",
       "ignore": []
     },
     {
       "from": "docs/byod-basics/v26/",
-      "to": "versioned_docs/version-26P/02-BYOD",
+      "to": "versioned_docs/version-12/02-BYOD",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/01-Algorithmen/",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/01-Algorithmen",
+      "to": "versioned_docs/version-12/03-Programmieren-1/01-Algorithmen",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/images/",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/02-Turtlegrafik/images",
+      "to": "versioned_docs/version-12/03-Programmieren-1/02-Turtlegrafik/images",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/001-intro.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/02-Turtlegrafik/001-intro.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/02-Turtlegrafik/001-intro.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/002-screen.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/02-Turtlegrafik/002-screen.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/02-Turtlegrafik/002-screen.md",
       "ignore": []
     },
     {
       "from": "docs/dokumente/ms-word/",
-      "to": "versioned_docs/version-26P/05-Texte",
+      "to": "versioned_docs/version-12/05-Texte",
       "ignore": [
         "04-Uebung.md"
       ]
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/003-repeat.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/02-Turtlegrafik/003-repeat.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/02-Turtlegrafik/003-repeat.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/100-turtle-commands.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/02-Turtlegrafik/100-turtle-commands.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/02-Turtlegrafik/100-turtle-commands.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/004-errors.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/02-Turtlegrafik/004-errors.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/02-Turtlegrafik/004-errors.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/005-functions.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/02-Turtlegrafik/005-functions.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/02-Turtlegrafik/005-functions.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/010-koch.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/02-Turtlegrafik/010-rekursion.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/02-Turtlegrafik/010-rekursion.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/006-functions-params.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/02-Turtlegrafik/006-functions-params.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/02-Turtlegrafik/006-functions-params.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/007-variablen.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/02-Turtlegrafik/007-variablen.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/02-Turtlegrafik/007-variablen.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/008-verzweigung.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/02-Turtlegrafik/008-verzweigung.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/02-Turtlegrafik/008-verzweigung.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/009-while.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/02-Turtlegrafik/009-while.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/02-Turtlegrafik/009-while.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/03-Python/03-gruefnisch-beavis.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/03-gruefnisch.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/03-gruefnisch.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/03-Python/04-random-walk.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/04-random-walk.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/04-random-walk.md",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/03-Python/images/",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/images",
+      "to": "versioned_docs/version-12/03-Programmieren-1/images",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/050-repetition/",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/10-repetition",
+      "to": "versioned_docs/version-12/03-Programmieren-1/10-repetition",
       "ignore": []
     },
     {
       "from": "docs/Programmieren-1/02-Turtlegrafik/052-xmas.md",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/05-weihnachten.md",
+      "to": "versioned_docs/version-12/03-Programmieren-1/05-weihnachten.md",
       "ignore": []
     },
     {
       "from": "docs/Codes-and-Data/",
-      "to": "versioned_docs/version-26P/06-Codierung",
+      "to": "versioned_docs/version-12/06-Codierung",
       "ignore": [
         "00-Lernziele.md",
         "02-Grafikformate-v24",
@@ -299,7 +299,7 @@
     },
     {
       "from": "docs/Programmieren-1/04-Testumgebung/26eP-test/",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/00-Probe",
+      "to": "versioned_docs/version-12/03-Programmieren-1/00-Probe",
       "ignore": [
         "ProbeE.md",
         "ProbeE-Nachholer.md"
@@ -307,24 +307,24 @@
     },
     {
       "from": "docs/pgzero/",
-      "to": "versioned_docs/version-26P/03-Programmieren-1/05-PyGameZero",
+      "to": "versioned_docs/version-12/03-Programmieren-1/05-PyGameZero",
       "ignore": []
     },
     {
       "from": "docs/Big-Data/",
-      "to": "versioned_docs/version-26P/07-Big-Data",
+      "to": "versioned_docs/version-12/07-Big-Data",
       "ignore": [
         "03-cookies.md"
       ]
     },
     {
       "from": "docs/Excel/",
-      "to": "versioned_docs/version-26P/08-Excel",
+      "to": "versioned_docs/version-12/08-Excel",
       "ignore": []
     },
     {
       "from": "docs/Datenbanken-of/",
-      "to": "versioned_docs/version-26P/09-Datenbanken",
+      "to": "versioned_docs/version-12/09-Datenbanken",
       "ignore": [
         "01-sql/04-create.md",
         "_category_.json"
@@ -333,7 +333,7 @@
     },
     {
       "from": "docs/Netzwerke-of/",
-      "to": "versioned_docs/version-26P/10-Netzwerke",
+      "to": "versioned_docs/version-12/10-Netzwerke",
       "ignore": [
         "002-Codierung",
         "003-Routing",
