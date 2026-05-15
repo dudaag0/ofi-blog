@@ -5,56 +5,59 @@ on:
     branches: [main]
   push:
     branches: [main]
-    
+
 permissions:
   contents: read
   pages: write
   id-token: write
-  
+
 jobs:
   checks:
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '16.x'
       - name: Test Build
         run: |
           if [ -e yarn.lock ]; then
-          yarn install --frozen-lockfile
+            yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
-          npm ci
+            npm ci
           else
-          npm i
+            npm i
           fi
           npm run build
+
   gh-release:
-  if: github.event_name != 'pull_request'
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v4
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
-    - uses: actions/setup-node@v4
-      with:
-        node-version: '16.x'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '16.x'
 
-    - name: Install dependencies
-      run: |
-        if [ -e yarn.lock ]; then
-          yarn install --frozen-lockfile
-        else
-          npm ci || npm i
-        fi
+      - name: Install dependencies
+        run: |
+          if [ -e yarn.lock ]; then
+            yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+            npm ci
+          else
+            npm i
+          fi
 
-    - name: Build site
-      run: npm run build
+      - name: Build site
+        run: npm run build
 
-    - name: Upload Pages artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: build
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
 
   deploy:
     needs: gh-release
