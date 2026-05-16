@@ -1,72 +1,69 @@
-import React from "react";
-import { MsalProvider } from "@azure/msal-react";
-
+import React, { useEffect } from "react";
 import { StoresProvider, rootStore } from "../stores/stores";
 import { observer } from "mobx-react-lite";
-import { msalConfig } from "../authConfig";
-import { PublicClientApplication } from "@azure/msal-browser";
+import { supabase } from "../authConfig";
 import useIsBrowser from "@docusaurus/useIsBrowser";
 import Head from "@docusaurus/Head";
 import siteConfig from '@generated/docusaurus.config';
 const { OFFLINE_MODE } = siteConfig.customFields as { OFFLINE_MODE?: boolean };
 
-let msalInstance: PublicClientApplication;
-let Msal = ({ children }) => <>{children}</>;
 export const CommentContext = React.createContext(true);
 export const CommentProvider = CommentContext.Provider;
 
-if (!OFFLINE_MODE) {
-    msalInstance = new PublicClientApplication(msalConfig);
+type RootProps = {
+    children: React.ReactNode;
+};
 
-    const selectAccount = () => {
-        /**
-         * See here for more information on account retrieval:
-         * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-common/docs/Accounts.md
-         */
-
-        const currentAccounts = msalInstance.getAllAccounts();
-        if (!currentAccounts || currentAccounts.length < 1) {
-            return;
-        } else if (currentAccounts.length > 1) {
-            console.warn("Multiple accounts detected.");
-            rootStore.msalStore.setAccount(currentAccounts[0]);
-        } else if (currentAccounts.length === 1) {
-            rootStore.msalStore.setAccount(currentAccounts[0]);
-        }
-    };
-
-    const handleResponse = (response) => {
-        /**
-         * To see the full list of response object properties, visit:
-         * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#response
-         */
-        rootStore.msalStore.setMsalInstance(msalInstance);
-        if (response !== null) {
-            rootStore.msalStore.setAccount(response.account);
-        } else {
-            selectAccount();
-        }
-    };
-
-    msalInstance
-        .handleRedirectPromise()
-        .then(handleResponse)
-        .catch((error) => {
-            console.error(error);
-        });
-
-    Msal = observer(({ children }) => {
-        return <MsalProvider instance={msalInstance}>{children}</MsalProvider>;
-    });
-}
-
-
-// Default implementation, that you can customize
-function Root({ children }) {
+function Root({ children }: RootProps) {
     const isBrowser = useIsBrowser();
+
+    useEffect(() => {
+        if (!isBrowser || OFFLINE_MODE) {
+            return;
+        }
+
+        const auth = supabase.auth as any;
+        let subscription: any;
+
+        const initAuth = async () => {
+            const sessionResponse = await (auth.getSession?.() ?? auth.session?.());
+            const data = sessionResponse?.data ?? sessionResponse;
+            const error = sessionResponse?.error;
+
+            if (error) {
+                console.warn('Supabase auth initialization failed', error);
+            } else if (data?.session?.user || data?.user) {
+                const user = data?.session?.user ?? data?.user;
+                rootStore.msalStore.setAccount({
+                    username: user.email ?? user.id,
+                    name: user.user_metadata?.full_name ?? user.email ?? user.id,
+                });
+            }
+
+            const subscriptionResponse = auth.onAuthStateChange((_event: any, session: any) => {
+                if (session?.user) {
+                    rootStore.msalStore.setAccount({
+                        username: session.user.email ?? session.user.id,
+                        name: session.user.user_metadata?.full_name ?? session.user.email ?? session.user.id,
+                    });
+                } else {
+                    rootStore.msalStore.setAccount(undefined);
+                }
+            });
+            subscription = subscriptionResponse?.data?.subscription;
+        };
+
+        initAuth();
+
+        return () => {
+            subscription?.unsubscribe?.();
+        };
+    }, [isBrowser]);
+
     if (isBrowser && !(window as any).store) {
         (window as any).store = rootStore;
     }
+
     return (
         <div>
             <Head>
@@ -77,14 +74,12 @@ function Root({ children }) {
                 />
             </Head>
             <StoresProvider value={rootStore}>
-                <Msal>
-                    <CommentProvider value={true}>
-                        {children}
-                    </CommentProvider>
-                </Msal>
+                <CommentProvider value={true}>
+                    {children}
+                </CommentProvider>
             </StoresProvider>
         </div>
     );
 }
 
-export default Root;
+export default observer(Root);

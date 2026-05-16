@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import styles from './login.module.scss';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { default as indexStyles } from './index.module.scss';
 import { useRootStore, useStore } from '../stores/hooks';
-import Link from '@docusaurus/Link';
 import { observer } from 'mobx-react-lite';
 import UserTable from './admin/UserTable';
 import { User, data } from '../api/user';
@@ -77,6 +76,40 @@ const Login = observer(() => {
     const userStore = useStore('userStore');
     const { account, loggedIn, offlineMode } = msalStore;
     const { current } = userStore;
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [loginError, setLoginError] = useState<string | null>(null);
+    const [message, setMessage] = useState<string | null>(null);
+    const [loading, setLoading] = useState(false);
+    const [mode, setMode] = useState<'login' | 'signup'>('login');
+
+    const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setLoginError(null);
+        setMessage(null);
+        setLoading(true);
+
+        const trimmedEmail = email.trim();
+        const result = mode === 'login'
+            ? await msalStore.login(trimmedEmail, password)
+            : await msalStore.signup(trimmedEmail, password);
+
+        setLoading(false);
+
+        if (result.error) {
+            setLoginError(result.error);
+            return;
+        }
+
+        if (result.message) {
+            setMessage(result.message);
+        }
+
+        if (mode === 'signup' && !result.error) {
+            setMode('login');
+        }
+    };
+
     return (
         <Layout>
             <HomepageHeader />
@@ -129,9 +162,67 @@ ${current?.firstName} ${current?.lastName}, ${current?.klasse ?? ''}&cc=${accoun
                         </>
                     ) : (
                         <>
-                            <Link to="/" onClick={() => msalStore.login()} className="button button--warning" style={{color: 'black'}}>
-                                Login mit GBSL Account
-                            </Link>
+                            <form className={styles.loginForm} onSubmit={handleLogin}>
+                                <div className={styles.loginField}>
+                                    <label htmlFor="email">E-Mail</label>
+                                    <input
+                                        id="email"
+                                        type="email"
+                                        value={email}
+                                        onChange={(event) => setEmail(event.target.value)}
+                                        required
+                                        placeholder="deine@adresse.ch"
+                                    />
+                                </div>
+                                <div className={styles.loginField}>
+                                    <label htmlFor="password">Passwort</label>
+                                    <input
+                                        id="password"
+                                        type="password"
+                                        value={password}
+                                        onChange={(event) => setPassword(event.target.value)}
+                                        required
+                                        placeholder="Passwort"
+                                    />
+                                </div>
+                                {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
+                                {message && <p style={{ color: 'green' }}>{message}</p>}
+                                <button
+                                    type="submit"
+                                    className="button button--warning"
+                                    style={{ color: 'black' }}
+                                    disabled={loading}
+                                >
+                                    {loading ? (mode === 'login' ? 'Login...' : 'Registrierung...') : (mode === 'login' ? 'Login mit E-Mail' : 'Registrieren')}
+                                </button>
+                            </form>
+                            <div style={{ marginTop: '1em' }}>
+                                {mode === 'login' ? (
+                                    <button
+                                        className="button button--secondary"
+                                        style={{ color: 'black' }}
+                                        onClick={() => {
+                                            setMode('signup');
+                                            setLoginError(null);
+                                            setMessage(null);
+                                        }}
+                                    >
+                                        Noch keinen Account? Registrieren
+                                    </button>
+                                ) : (
+                                    <button
+                                        className="button button--secondary"
+                                        style={{ color: 'black' }}
+                                        onClick={() => {
+                                            setMode('login');
+                                            setLoginError(null);
+                                            setMessage(null);
+                                        }}
+                                    >
+                                        Bereits registriert? Login
+                                    </button>
+                                )}
+                            </div>
                         </>
                     )}
                     {(OFFLINE_MODE || current?.admin) && (

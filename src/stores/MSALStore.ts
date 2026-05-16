@@ -1,24 +1,21 @@
-import axios, { AxiosPromise, AxiosResponse, CancelTokenSource } from 'axios';
-import {
-    AccountInfo,
-    AuthenticationResult,
-    InteractionRequiredAuthError,
-    PublicClientApplication,
-} from '@azure/msal-browser';
+import axios, { CancelTokenSource } from 'axios';
 import { action, computed, makeObservable, observable, reaction, runInAction } from 'mobx';
-import { API, loginRequest } from '../authConfig';
 import { RootStore } from './stores';
 import api, { isLive } from '../api/base';
 import { umamiReport } from '../helpers/umami';
 import { User } from '../api/user';
+import { supabase } from '../authConfig';
+
+export type AuthAccount = {
+    username: string;
+    name: string;
+    [key: string]: any;
+};
 
 export class MSALStore {
     private readonly root: RootStore;
     @observable.ref
-    account?: AccountInfo;
-
-    @observable.ref
-    _msalInstance?: PublicClientApplication;
+    account?: AuthAccount;
 
     @observable
     offlineMode = false;
@@ -40,7 +37,6 @@ export class MSALStore {
         reaction(
             () => this.offlineTimer,
             (offlineTime) => {
-                // if (!offlineTime || this.ignoreOfflineState) {
                 if (!offlineTime) {
                     return;
                 }
@@ -55,7 +51,7 @@ export class MSALStore {
                             });
                         }
                     })
-                    .catch((err) => {
+                    .catch(() => {
                         return;
                     });
                 if (offlineTime > 20000 && window && !this.offlineStateConfirmed) {
@@ -102,21 +98,8 @@ export class MSALStore {
         return tspan < 0 ? 0 : tspan;
     }
 
-    @computed
-    get msalInstance(): PublicClientApplication {
-        if (!this._msalInstance) {
-            throw 'No MSAL Instance set!';
-        }
-        return this._msalInstance;
-    }
-
     @action
-    setMsalInstance(msalInstance: PublicClientApplication) {
-        this._msalInstance = msalInstance;
-    }
-
-    @action
-    setAccount(account?: AccountInfo) {
+    setAccount(account?: AuthAccount) {
         this.offlineMode = false;
         this.account = account;
     }
@@ -127,60 +110,86 @@ export class MSALStore {
     }
 
     @action
-    login() {
-        this.msalInstance.loginRedirect(loginRequest).catch((e) => {
-            console.warn(e);
-        });
+    async login(email: string, password: string): Promise<{ error?: string; message?: string }> {
+        const auth = supabase.auth as any;
+        const { data, error } = await auth.signInWithPassword({ email, password });
+
+        if (error) {
+            console.warn(error);
+            return { error: error.message ?? 'Login fehlgeschlagen' };
+        }
+
+        const user = data?.user;
+        if (user) {
+            this.setAccount({
+                username: user.email ?? user.id,
+                name: user.user_metadata?.full_name ?? user.email ?? user.id,
+            });
+        }
+
+        return {};
     }
 
     @action
-    logout() {
+    async signup(email: string, password: string): Promise<{ error?: string; message?: string }> {
+        const auth = supabase.auth as any;
+        const { data, error } = await auth.signUp({ email, password });
+
+        if (error) {
+            console.warn(error);
+            return { error: error.message ?? 'Registrierung fehlgeschlagen' };
+        }
+
+        const user = data?.user ?? data?.session?.user;
+        if (user) {
+            this.setAccount({
+                username: user.email ?? user.id,
+                name: user.user_metadata?.full_name ?? user.email ?? user.id,
+            });
+            return { message: 'Registrierung erfolgreich. Du bist jetzt eingeloggt.' };
+        }
+
+        return { message: 'Registrierung erfolgreich. Bitte bestätige deine E-Mail, um den Login abzuschließen.' };
+    }
+
+    @action
+    async logout() {
         if (!this.loggedIn) {
             return;
         }
-        const logoutRequest = {
-            account: this.msalInstance.getAccountByUsername(this.account.username),
-        };
-        this.msalInstance.logoutRedirect(logoutRequest).catch((e) => {
-            console.warn(e);
-        });
-    }
-
-    @action
-    getTokenRedirect(): Promise<void | AuthenticationResult> {
-        if (!this.account) {
-            throw 'No Login Present!';
+        const auth = supabase.auth as any;
+        const { error } = await auth.signOut();
+        if (error) {
+            console.warn(error);
         }
-        const request = {
-            scopes: [`${API}/api/access_as_user`],
-            account: this.msalInstance.getAccountByUsername(this.account.username),
-        };
-        return this.msalInstance.acquireTokenSilent(request).catch((error) => {
-            console.error(error);
-            console.warn('silent token acquisition fails. acquiring token using popup');
-            if (error instanceof InteractionRequiredAuthError) {
-                // fallback to interaction when silent call fails
-                return this.msalInstance.acquireTokenRedirect(request);
-            }
-            throw error;
-        });
+        this.setAccount(undefined);
     }
 
-    withToken(): Promise<boolean | void> {
+    private async getSessionToken(): Promise<string | null> {
+        const auth = supabase.auth as any;
+        const response = await (auth.getSession?.() ?? auth.session?.());
+        const data = response?.data ?? response;
+        const error = response?.error;
+        if (error) {
+            console.error('Supabase session fetch failed', error);
+            return null;
+        }
+        return data?.session?.access_token ?? null;
+    }
+
+    async withToken(): Promise<boolean> {
         if (this.offlineMode) {
-            return Promise.resolve(true);
+            return true;
         }
-        return this.getTokenRedirect().then((res) => {
-            if (res) {
-                (api.defaults.headers as any).Authorization = `Bearer ${res.accessToken}`;
-                return true;
-            }
-            console.warn('No Login Token Found');
-            return false;
-        });
+        const token = await this.getSessionToken();
+        if (token) {
+            (api.defaults.headers as any).Authorization = `Bearer ${token}`;
+            return true;
+        }
+        console.warn('No Login Token Found');
+        return false;
     }
 
-    
     @action
     loadOfflineData(data: User) {
         this.offlineMode = true;
@@ -188,15 +197,8 @@ export class MSALStore {
         this.offlineSince = undefined;
         this.offlineStateConfirmed = false;
         this.account = {
-            homeAccountId: '',
-            environment: '',
-            tenantId: '',
             username: data.email,
-            localAccountId: '',
             name: data.email,
-            idTokenClaims: {},
-            idToken: '',
-            nativeAccountId: '',
-        }
+        };
     }
 }

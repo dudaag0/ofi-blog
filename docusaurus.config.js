@@ -79,6 +79,8 @@ async function createConfig() {
       GIT_COMMIT_SHA: GIT_COMMIT_SHA,
       DOCS_ONLY: process.env.DOCS_ONLY || false,
       AZURE_CLIENT_ID: process.env.AZURE_CLIENT_ID || 'no-id',
+      SUPABASE_URL: process.env.SUPABASE_URL || 'https://bwowxznyqstkkbokvdzg.supabase.co',
+      SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY || 'sb_publishable_kXk0gpZqrpyXxurSPhz9EA_OA99mNBg',
       DOMAIN: process.env.DOMAIN || 'http://localhost:3000',
       OFFLINE_MODE: OFFLINE_MODE
     },
@@ -110,6 +112,11 @@ async function createConfig() {
             position: 'left',
             label: 'Playground'
           },
+          {
+            to: 'login',
+            position: 'right',
+            label: '🔑'
+          }
         ]
       },
       footer: {
