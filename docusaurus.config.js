@@ -23,7 +23,8 @@ const admonitionConfig = {
 
 const BASE_URL = '/ofi-blog/';
 const GIT_COMMIT_SHA = process.env.DRONE_COMMIT_SHA || Math.random().toString(36).substring(7);
-const OFFLINE_MODE = process.env.OFFLINE_MODE || false;
+const API = process.env.API || '';
+const OFFLINE_MODE = process.env.OFFLINE_MODE === 'true' || API === '';
 const VERSIONS = {
     current: {
       label: 'Material',
