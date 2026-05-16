@@ -3,7 +3,7 @@ import { action, computed, makeObservable, observable } from 'mobx';
 import { User as UserProps } from '../api/user';
 
 export default class User {
-  readonly id: number;
+  readonly id: number | string;
   readonly email: string;
   readonly klasse?: string;
   readonly admin?: boolean;
@@ -50,13 +50,9 @@ export default class User {
       email: this.email,
       class: this.klasse,
       groups: this.groups,
-      admin: this.admin,
+      admin: this.admin ?? false,
       created_at: this.createdAt.toISOString(),
       updated_at: this.updatedAt.toISOString()
     };
-  }
-
-  clone(): User {
-    return new User(this.props);
   }
 }

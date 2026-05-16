@@ -9,8 +9,8 @@ export type DocType = 'code' | 'string' | 'text' | 'array' | 'state';
 
 export interface BaseModel {
     webKey: string;
-    id: number;
-    userId: number;
+    id: number | string;
+    userId: number | string;
     createdAt: Date;
     updatedAt: Date;
 
