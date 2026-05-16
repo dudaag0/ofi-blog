@@ -82,6 +82,7 @@ async function createConfig() {
       SUPABASE_URL: process.env.SUPABASE_URL || 'https://bwowxznyqstkkbokvdzg.supabase.co',
       SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY || 'sb_publishable_kXk0gpZqrpyXxurSPhz9EA_OA99mNBg',
       DOMAIN: process.env.DOMAIN || 'http://localhost:3000',
+      API: process.env.API || '',
       OFFLINE_MODE: OFFLINE_MODE
     },
     i18n: {
