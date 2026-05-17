@@ -14,7 +14,7 @@ Im Unterricht haben Sie gesehen, wie die umgedrehte Karte sofort entdeckt wurde 
 :::aufgabe Aufgaben
 <Answer type="state" webKey="db764a01-2401-47e7-85b2-734efcb4649a" />
 
-1. Beschreiben Sie, nach welchem Prinzip Herr Hofer das `5x5`-Muster zu einem `6x6`-Muster ergänzt hat.
+1. Beschreiben Sie, nach welchem Prinzip Frau Greif das `5x5`-Muster zu einem `6x6`-Muster ergänzt hat.
 
     <Answer type="text" webKey="18145a45-4a97-47aa-9905-aeb5c332a7da" />
 

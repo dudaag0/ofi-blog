@@ -13,6 +13,8 @@ import Hint from '../components/Solution/Hint'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ExcelBox from '../components/ExcelBox';
+import OsTabs from '../components/OsTabs';
+import Video from '../components/Video';
 
 export default {
   // Re-use the default mapping
@@ -29,4 +31,5 @@ export default {
   GTabs: GTabs,
   TabItem: TabItem,
   ExcelBox: ExcelBox,
+  OsTabs: OsTabs,
 };

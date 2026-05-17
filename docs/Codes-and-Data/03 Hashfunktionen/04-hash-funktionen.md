@@ -1,6 +1,6 @@
 ---
 sidebar_custom_props:
-  id: 79c8cca9-e452-4e59-9445-e5c06cb23b90
+  id: d305d1c0-a45c-492f-a30d-11240f356187
   source:
     name: rothe.io
     ref: https://rothe.io/?b=crypto&p=103784
