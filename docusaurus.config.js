@@ -164,7 +164,7 @@ async function createConfig() {
               if (params.version === 'current') {
                 return `https://github.com/dudaag0/ofi-blog/edit/main/${params.versionDocsDirPath}/${params.docPath}`
               }
-              if (params.version === '24ef') {
+              if (params.version === 'LK') {
                 return 'https://github.com/dudaag0/ofi-blog/tree/main/docs'
               }
             },

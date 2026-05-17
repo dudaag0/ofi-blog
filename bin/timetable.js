@@ -27,18 +27,6 @@ const EVENTS = {
 
 }
 const CLASS_EVENTS = {
-    ['24ef']: {
-        [36]: {desc: 'Kompensation RobOlympics: Auftrag Normalisierung, SQL Abfragen', type: 'holiday', date: '08.09.2023'},
-        [44]: {desc: 'Rob-Olympics: Vorbereitungs-Weekend 3-4.11', type: 'event', date: '03.11.2023'},
-        [46]: {desc: 'Rob-Olympics: Rapperswil 18.11.2023', type: 'event', date: '18.11.2023'},
-    },
-    ['26P']: {
-        [45]: {desc: 'SET', type: 'holiday', date: '8.11.2023'},
-        [49]: {desc: 'Kantonaler Fachschaftstag', type: 'holiday', date: '05.12.2023'},
-    },
-    ['26e']: {
-        [49]: {desc: 'Kantonaler Fachschaftstag', type: 'holiday', date: '05.12.2023'},
-    },
     // ['24L']: {
     //     [23]: { desc: 'Pfingsten', type: 'holiday'}
     // },

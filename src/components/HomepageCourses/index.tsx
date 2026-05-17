@@ -23,17 +23,13 @@ if (!DOCS_ONLY) {
   CourseList.push({
     title: 'Leistungskurs',
     classes: [
-      '11',
-      '12'
+      'LF',
+      'BF'
     ]
   });
   CourseList.push({
-    title: 'Klasse 9',
-    classes: [
-      {
-        uri: '24ef/home',
-        label: 'EF'
-      },
+    title: 'Mittelstufe',
+    classes: [ 
     ]
   });  
 }
