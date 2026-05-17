@@ -6,6 +6,6 @@ sidebar_custom_props:
 ---
 
 
-# Informatik 11
+# Leistungsfach Informatik
 
 Herzlich willkommen!

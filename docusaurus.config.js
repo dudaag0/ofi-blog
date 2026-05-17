@@ -33,7 +33,7 @@ const VERSIONS = {
 };
 
 if (!process.env.DOCS_ONLY) {
-  ['11', '12', '24ef'].forEach(version => {
+  ['LK', 'BK'].forEach(version => {
     VERSIONS[version] = {
       label: version,
       banner: 'none'

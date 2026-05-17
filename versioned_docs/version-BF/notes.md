@@ -8,5 +8,3 @@ sidebar_custom_props:
 # Notizen
 
 ## Filme
-
-- Hidden Figures: FS 2023

@@ -6,5 +6,7 @@ sidebar_custom_props:
 ---
 
 
-# Informatik 12
+# Basisfach Informatik
+
+Herzlich Willkommen!
 
