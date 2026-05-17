@@ -3,7 +3,9 @@ sidebar_custom_props:
   id: 582b6429-11c5-4951-bd92-b682dbb05d4b
 ---
 
-# 2. Zahlensysteme
+# 2. Zahlendarstellungen
+
+## 1. Natürliche Zahlen ℕ – Binärdarstellung
 
 
 Aktuelle Computer kennen im wesentlichen zwei Zustände: Strom- oder Nicht-Strom. Da es nichts dazwischen gibt, werden diese Zustände auch "binär" genannt. Dies kann mit Zahlen wie folgt dargestellt werden:
@@ -23,6 +25,7 @@ $$\
     &= 3 \cdot 10^2 + 2 \cdot 10^1 + 8 \cdot 10^0 \\
 
 \end{aligned}$$
+
 
 ## Binärsystem
 
@@ -114,11 +117,12 @@ Nun wird für jede Stelle überprüft, ob die entsprechende Zweierpotenz zur Zwi
 :::aufgabe Bin → Dez
 <Answer type="state" webKey="b57fb7ab-c9eb-4fa2-914c-d7d7a0f8536b" />
 
-Wandeln Sie vom vom Binär- ins Dezimalsystem um.
+Wandeln Sie vom Binär- ins Dezimalsystem um.
 
 <Answer  type="string" webKey="ac3791b4-7987-4d92-bad4-298e39bd4497"  solution="13">
 
 $1101_2=$
+
 
 </Answer>
 
@@ -158,5 +162,162 @@ $241_{10}=$
 $194_{10}=$
 
 </Answer>
+
+<Answer type="string" webKey="d35ed5ed-5455-4fea-b0aa-64486fc826cc" solution="0 bis 256" >
+
+Welcher Zahlbereich lässt sich so mit 8 Bit darstellen?(Eingabeformat: "zahl" bis "zahl")
+
+</Answer>
+
+<Answer type="string" webKey="4507b899-6a6d-4791-8311-43ebecdd1513" solution="0 bis 2^n" >
+
+Welcher Zahlenbereich lässt sich so mit n Bit darstellen?
+
+</Answer>
+:::
+:::
+
+# 2. Ganze Zahlen – Zweierkomplement ℤ
+
+Mithilfe des sogenannten Zweierkomplements lassen sich negative Binärzahlen darstellen.  
+Hierbei ist jeweils das Bit mit der höchsten Wertigkeit als negativer Wert definiert. Als Beispiel anhand eines 8-Bit-Wertes:
+
+## Stellenwerttabelle (8 Bit)
+
+| Stelle | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 |
+|--------|---|---|---|---|---|---|---|---|
+| Wertigkeit (2er-Potenz) | -2⁷ | 2⁶ | 2⁵ | 2⁴ | 2³ | 2² | 2¹ | 2⁰ |
+| Wertigkeit (dezimal) | -128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+
+---
+
+:::aufgabe Wertebereich
+
+<Answer type="string" webKey="a98cf4a1-e7ea-4860-a3d9-b61233b5d51f" solution="-128 bis 127" >
+
+Welcher Zahlbereich lässt sich so mit 8 Bit darstellen?
+
+</Answer>
+
+<Answer type="string" webKey="1d264ee4-b30f-433c-981d-d84c2d474f98" solution="-2^(n-1) bis (2^(n-1)- 1)" >
+
+Welcher Zahlenbereich lässt sich so mit n Bit darstellen?
+
+</Answer>
+:::
+:::
+---
+
+:::aufgabe Umrechnung
+
+Rechne die Zahlen vom Binärsystem in das Dezimalsystem bzw. umgekehrt um:
+
+<Answer type="string" webKey="10348064-946e-40e6-9c51-d054a089cf1d" solution="-86">
+
+$10101010_2=$
+
+</Answer>
+
+<Answer type="string" webKey="af87b375-b2b2-48e4-a5dc-be141885a6ca" solution="-16">
+
+$11110000_2=$
+
+</Answer>
+
+<Answer type="string" webKey="3dabf3c8-767f-4369-a3e1-970763860c4f" solution="10011110">
+
+$-98_{10}=$
+
+</Answer>
+
+<Answer type="string" webKey="540f4e1a-f23b-46bc-8a4c-ba1545175ba9" solution="11111111">
+
+$-1_{10}=$
+
+</Answer> 
+
+<Answer type="text" webKey="7a4651ab-4f8b-4da8-8a7f-707a027e2248" />
+
+Wie kann man anhand einer Binärzahl im Zweierkomplement erkennen, ob diese positiv oder negativ ist?
+
+</Answer>
+
+<Solution webKey="7a4651ab-4f8b-4da8-8a7f-707a027e2248">
+
+Höchstwertigstes Bit 0 → positiv, höchstwertigstes Bit 1 → negativ, da die Summe der
+Werte alle nachfolgenden Ziffern auf jeden Fall kleiner ist als die negative Wertigkeit der
+ersten Stelle
+
+</Solution
+
+<Answer type="text" webKey="8da258e3-b28f-495b-a223-5be9915a1799" />
+
+Wie kann man mithilfe des Zweierkomplements aus einer positiven die dazu negative Zahl bilden?
+
+</Answer> 
+
+<Solution webKey="8da258e3-b28f-495b-a223-5be9915a1799">
+
+Man dreht alle Ziffern um und rechnet danach +1
+
+</Solution>
+:::
+:::
+
+
+# Rationale Zahlen - Festkommadarstellung
+
+Um Bruchzahlen darzustellen, kann z.B. die Festkommadarstellung benutzt werden. Es wird im
+Vorfeld definiert, an welcher Stelle sich das Komma befindet, bzw. Wie viele Vorkomma- und wie
+viele Nachkommastellen die Zahl beinhaltet.
+Die Wertigkeit hinter der Kommastelle wird entsprechend der 2er-Potenzen fortgeführt.
+Hier wird von einer **Festkommazahl mit 4 Nachkommastellen („Q4“)** ausgegangen.
+
+## Stellenwerttabelle (8 Bits)
+
+| Stelle | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 |
+|--------|---|---|---|---|---|---|---|---|
+| Wertigkeit 2er-Potenz | 2³ | 2² | 2¹ | 2⁰ | 2⁻¹ | 2⁻² | 2⁻³ | 2⁻⁴ |
+| Wertigkeit dezimal | 8 | 4 | 2 | 1 | 0,5 | 0,25 | 0,125 | 0,0625 |
+
+::: aufgabe 
+
+Rechne die Zahlen vom Binärsystem in das Dezimalsystem bzw. umgekehrt um:
+
+<Answer type="string" webKey="133b6bf4-0385-4f37-b827-b0b1cde8cdca" solution="10,75">
+
+$10101100_2=$
+
+</Answer>
+
+<Answer type="string" webKey="2a04f2d0-c6d1-4e7d-8445-4e81df9d3de7" solution="1,0625">
+
+$00010001_2=$
+
+</Answer>
+
+<Answer type="string" webKey="19e1ebc4-5774-4c82-b7f3-4eda5f740cfc" solution="01100110">
+
+$6,375_{10}=$
+
+</Answer>
+
+<Answer type="string" webKey="0428c55e-f6db-43ad-8e9e-8c5ee9e71ea0" solution="10011111">
+
+$9,9375_{10}=$
+
+</Answer>
+
+<Answer type="text" webKey="0996c405-2cd5-4ef1-bf58-852b4e6f0326" />
+Welcher Zahlbereich lässt sich mit 8 Bit, davon 4 Nachkommastellen darstellen?
+</Answer>
+
+<Solution webKey="0996c405-2cd5-4ef1-bf58-852b4e6f0326">
+
+Mit 4 Nachkommastellen: 0,0625, allgemein: abhängig von Anzahl der
+Nachkommastellen k. Kleinste Differenz (=Auflösung) liegt bei $2^{-k}$.
+
+</Solution>
+
 :::
 :::
