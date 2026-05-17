@@ -1,0 +1,328 @@
+---
+sidebar_custom_props:
+  id: 582b6429-11c5-4951-bd92-b682dbb05d4b
+---
+
+# 2. Zahlendarstellungen
+
+## 1. Natürliche Zahlen ℕ – Binärdarstellung
+
+
+Aktuelle Computer kennen im wesentlichen zwei Zustände: Strom- oder Nicht-Strom. Da es nichts dazwischen gibt, werden diese Zustände auch "binär" genannt. Dies kann mit Zahlen wie folgt dargestellt werden:
+
+- `0` → kein Strom
+- `1` → Strom
+
+Da wir Menschen uns besser im Zehnersystem zurechtfinden, wo es **10** eindeutige Zeichen gibt, brauchen wir eine Möglichkeit, zwischen diesen System hin- und herzurechnen. Jedes dieser sog. **Stellenwertsysteme** ist gleich aufgebaut. Schaut man sich das Zehnersystem an, bemerkt man, dass jede Stelle mit einer 10er Potenz multipliziert wird.
+
+## Zehnersystem
+
+$$\
+\begin{aligned}
+
+328 &= 300 + 20 + 8 \\
+    &= 3 \cdot 100 + 2 \cdot 10 + 8 \cdot 1 \\
+    &= 3 \cdot 10^2 + 2 \cdot 10^1 + 8 \cdot 10^0 \\
+
+\end{aligned}$$
+
+
+## Binärsystem
+
+> Das Binärsystem wird auch *Dualsystem* oder *Zweiersystem* genannt
+
+
+Nun gibt es nur zwei eindeutige Zeichen, `0` und `1`, und jede Stelle wird mit einer Zweierpotenz multipliziert. In der folgenden Tabelle sind die ersten 12 Dezimalzahlen auch als Binärzahl angegeben.
+
+:::flex --classes=slim-table;normal-header --min-width=200px
+|   Binär |  Dezimal |
+| ------: | -------: |
+|   $0_2$ | $0_{10}$ |
+|   $1_2$ | $1_{10}$ |
+|  $10_2$ | $2_{10}$ |
+|  $11_2$ | $3_{10}$ |
+| $100_2$ | $4_{10}$ |
+| $101_2$ | $5_{10}$ |
+***
+|    Binär |   Dezimal |
+| -------: | --------: |
+|  $110_2$ |  $6_{10}$ |
+|  $111_2$ |  $7_{10}$ |
+| $1000_2$ |  $8_{10}$ |
+| $1001_2$ |  $9_{10}$ |
+| $1010_2$ | $10_{10}$ |
+| $1011_2$ | $11_{10}$ |
+:::
+
+:::finding Hinweis: Subskript
+Die tiefgestellte `2` bzw. `10` zeigt an, in welchem Zahlensystem die Zahl dargestellt ist und wird **Subskript** genannt. Durch das Subskript wird ersichtlich, ob bspw. mit `101` dezimal "*Hundert und Eins*" oder binär "*Eins Null Eins*" gemeint ist.
+:::
+
+### Binär → Dezimal
+
+Die Umrechnung vom Binärsystem ins Dezimalsystem erfolgt durch Ausmultiplizieren mit den entsprechenden Zweierpotenzen.
+
+Beispiel: `1011`
+<div className="slim-table no-header">
+
+|              |       |       |       |       |
+| -----------: | ----: | ----: | ----: | ----: |
+| Zweierpotenz | $2^3$ | $2^2$ | $2^1$ | $2^0$ |
+|    Binärzahl |   $1$ |   $0$ |   $1$ |   $1$ |
+|    Summanden |   $8$ |   $0$ |   $2$ |   $1$ |
+| **Resultat** |       |       |       |  $11$ |
+
+</div>
+
+oder mathematisch formuliert:
+
+$$
+\begin{aligned}
+
+1011_2 &= 1 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0 \\
+     &= 1 \cdot 8 + 0 \cdot 4 + 1 \cdot 2 + 1 \cdot 1 \\
+     &= 11_{10}
+
+\end{aligned}$$
+
+### Dezimalsystem → Binärsystem
+
+Für die Umrechnung vom Dezimalsystem zum Binärsystem ist die Tabelle der Zweierpotenzen essenziell:
+
+| $2^8$ | $2^7$ | $2^6$ | $2^5$ | $2^4$ | $2^3$ | $2^2$ | $2^1$ | $2^0$ |
+| ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: |
+|   256 |   128 |    64 |    32 |    16 |     8 |     4 |     2 |     1 |
+
+**Beispiel**: 143
+
+Die erste Zweierpotenz, die kleiner ist als 143 ist, ist $2^7 = 128$ → die Binärzahl hat also 8 Stellen.
+
+Nun wird für jede Stelle überprüft, ob die entsprechende Zweierpotenz zur Zwischensumme dazuaddiert werden kann, oder ob man dadurch bereits eine zu grosse Zahl erhält.
+
+
+| **2er-Potenz**                                                                                                                    |                                                $2^7$ |                                                    $2^6$ |                                                  $2^5$ |                                                    $2^4$ |                                                 $2^3$ |                                                   $2^2$ |                                            $2^1$ |                                            $2^0$ |                                           Zwischensumme |
+| :-------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------: | -------------------------------------------------------: | -----------------------------------------------------: | -------------------------------------------------------: | ----------------------------------------------------: | ------------------------------------------------------: | -----------------------------------------------: | -----------------------------------------------: | ------------------------------------------------------: |
+| _Rechnungsschritte_                                                                                                               | <span style={{backgroundColor: 'yellow'}}>128</span> | <span style={{backgroundColor: 'greenyellow'}}>64</span> | <span style={{backgroundColor: 'lawngreen'}}>32</span> | <span style={{backgroundColor: 'springgreen'}}>16</span> | <span style={{backgroundColor: 'turquoise'}}>8</span> | <span style={{backgroundColor: 'deepskyblue'}}>4</span> | <span style={{backgroundColor: 'plum'}}>2</span> | <span style={{backgroundColor: 'pink'}}>1</span> |                                                         |
+| 1. <span style={{backgroundColor: 'yellow'}}>128</span> $\lt 143$                                                                 |                                                    1 |                                                          |                                                        |                                                          |                                                       |                                                         |                                                  |                                                  |    <span style={{backgroundColor: 'yellow'}}>128</span> |
+| 2. <span style={{backgroundColor: 'yellow'}}>128</span> + <span style={{backgroundColor: 'greenyellow'}}>64</span> $\not \lt 143$ |                                                    1 |                                                        0 |                                                        |                                                          |                                                       |                                                         |                                                  |                                                  |    <span style={{backgroundColor: 'yellow'}}>128</span> |
+| 3. <span style={{backgroundColor: 'yellow'}}>128</span> + <span style={{backgroundColor: 'lawngreen'}}>32</span> $\not \lt 143$   |                                                    1 |                                                        0 |                                                      0 |                                                          |                                                       |                                                         |                                                  |                                                  |    <span style={{backgroundColor: 'yellow'}}>128</span> |
+| 4. <span style={{backgroundColor: 'yellow'}}>128</span> + <span style={{backgroundColor: 'springgreen'}}>16</span> $\not \lt 143$ |                                                    1 |                                                        0 |                                                      0 |                                                        0 |                                                       |                                                         |                                                  |                                                  |    <span style={{backgroundColor: 'yellow'}}>128</span> |
+| 5. <span style={{backgroundColor: 'yellow'}}>128</span> + <span style={{backgroundColor: 'turquoise'}}>8</span> $\lt 143$         |                                                    1 |                                                        0 |                                                      0 |                                                        0 |                                                     1 |                                                         |                                                  |                                                  |    <span style={{backgroundColor: 'orange'}}>136</span> |
+| 6. <span style={{backgroundColor: 'orange'}}>136</span> + <span style={{backgroundColor: 'deepskyblue'}}>4</span> $\lt 143$       |                                                    1 |                                                        0 |                                                      0 |                                                        0 |                                                     1 |                                                       1 |                                                  |                                                  |     <span style={{backgroundColor: 'coral'}}>140</span> |
+| 7. <span style={{backgroundColor: 'coral'}}>140</span> + <span style={{backgroundColor: 'plum'}}>2</span>$\lt 143$                |                                                    1 |                                                        0 |                                                      0 |                                                        0 |                                                     1 |                                                       1 |                                                1 |                                                  | <span style={{backgroundColor: 'lightblue'}}>142</span> |
+| **8.** <span style={{backgroundColor: 'lightblue'}}>142</span> + <span style={{backgroundColor: 'pink'}}>1</span>$= 143$          |                                                **1** |                                                    **0** |                                                  **0** |                                                    **0** |                                                 **1** |                                                   **1** |                                            **1** |                                            **1** |                                                 **143** |
+
+
+:::flex --min-width=250px
+:::aufgabe Bin → Dez
+<Answer type="state" webKey="b57fb7ab-c9eb-4fa2-914c-d7d7a0f8536b" />
+
+Wandeln Sie vom Binär- ins Dezimalsystem um.
+
+<Answer  type="string" webKey="ac3791b4-7987-4d92-bad4-298e39bd4497"  solution="13">
+
+$1101_2=$
+
+
+</Answer>
+
+<Answer  type="string" webKey="b83bedd5-81ba-4333-a0d9-688020b4796c"  solution="55">
+
+$110111_{2}=$
+
+</Answer>
+
+<Answer  type="string" webKey="252e607d-e364-48c3-a4e1-6377c1f51f75"  solution="202">
+
+$11001010_2=$
+
+</Answer>
+:::
+
+***
+:::aufgabe Dez → Bin
+<Answer type="state" webKey="fb23f3dc-1b42-4e67-8cd4-b9de020a303a" />
+
+Wandeln Sie vom  Dezimal- ins Binärsystem um.
+
+<Answer  type="string" webKey="0405292b-3ef3-4b11-b40d-98310670ae7c"  solution="101011">
+
+$43_{10}=$
+
+</Answer>
+
+<Answer  type="string" webKey="54220ee5-3917-4521-8f5e-011257027896"  solution="11110001">
+
+$241_{10}=$
+
+</Answer>
+
+<Answer  type="string" webKey="b0729f14-b7b6-4f25-b46d-2252715c10c2"  solution="11000010">
+
+$194_{10}=$
+
+</Answer>
+
+<Answer type="string" webKey="d35ed5ed-5455-4fea-b0aa-64486fc826cc" solution="0 bis 256" >
+
+Welcher Zahlbereich lässt sich so mit 8 Bit darstellen?(Eingabeformat: "zahl" bis "zahl")
+
+</Answer>
+
+<Answer type="string" webKey="4507b899-6a6d-4791-8311-43ebecdd1513" solution="0 bis 2^n" >
+
+Welcher Zahlenbereich lässt sich so mit n Bit darstellen?
+
+</Answer>
+:::
+:::
+
+# 2. Ganze Zahlen – Zweierkomplement ℤ
+
+Mithilfe des sogenannten Zweierkomplements lassen sich negative Binärzahlen darstellen.  
+Hierbei ist jeweils das Bit mit der höchsten Wertigkeit als negativer Wert definiert. Als Beispiel anhand eines 8-Bit-Wertes:
+
+## Stellenwerttabelle (8 Bit)
+
+| Stelle | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 |
+|--------|---|---|---|---|---|---|---|---|
+| Wertigkeit (2er-Potenz) | -2⁷ | 2⁶ | 2⁵ | 2⁴ | 2³ | 2² | 2¹ | 2⁰ |
+| Wertigkeit (dezimal) | -128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+
+---
+
+:::aufgabe Wertebereich
+
+<Answer type="state" webKey="abfe1c1c-c1b9-425f-9b13-3fb6ea7e9831" />
+
+<Answer type="string" webKey="a98cf4a1-e7ea-4860-a3d9-b61233b5d51f" solution="-128 bis 127" >
+
+Welcher Zahlbereich lässt sich so mit 8 Bit darstellen?
+
+</Answer>
+
+<Answer type="string" webKey="1d264ee4-b30f-433c-981d-d84c2d474f98" solution="-2^(n-1) bis (2^(n-1)- 1)" >
+
+Welcher Zahlenbereich lässt sich so mit n Bit darstellen?
+
+</Answer>
+:::
+:::
+---
+
+:::aufgabe Umrechnung
+
+<Answer type="state" webKey="bfc550b0-2d01-42e3-bd25-5831706a37fc" />
+
+Rechne die Zahlen vom Binärsystem in das Dezimalsystem bzw. umgekehrt um:
+
+<Answer type="string" webKey="10348064-946e-40e6-9c51-d054a089cf1d" solution="-86">
+
+$10101010_2=$
+
+</Answer>
+
+<Answer type="string" webKey="af87b375-b2b2-48e4-a5dc-be141885a6ca" solution="-16">
+
+$11110000_2=$
+
+</Answer>
+
+<Answer type="string" webKey="3dabf3c8-767f-4369-a3e1-970763860c4f" solution="10011110">
+
+$-98_{10}=$
+
+</Answer>
+
+<Answer type="string" webKey="540f4e1a-f23b-46bc-8a4c-ba1545175ba9" solution="11111111">
+
+$-1_{10}=$
+
+</Answer> 
+
+<Answer type="text" webKey="7a4651ab-4f8b-4da8-8a7f-707a027e2248">
+
+Wie kann man anhand einer Binärzahl im Zweierkomplement erkennen, ob diese positiv oder negativ ist?
+
+</Answer>
+
+<Solution webKey="7a4651ab-4f8b-4da8-8a7f-707a027e2248">
+
+Höchstwertigstes Bit 0 → positiv, höchstwertigstes Bit 1 → negativ, da die Summe der
+Werte alle nachfolgenden Ziffern auf jeden Fall kleiner ist als die negative Wertigkeit der
+ersten Stelle
+
+</Solution>
+
+<Answer type="text" webKey="8da258e3-b28f-495b-a223-5be9915a1799">
+
+Wie kann man mithilfe des Zweierkomplements aus einer positiven die dazu negative Zahl bilden?
+
+</Answer> 
+
+<Solution webKey="8da258e3-b28f-495b-a223-5be9915a1799">
+
+Man dreht alle Ziffern um und rechnet danach +1
+
+</Solution>
+:::
+:::
+
+
+# Rationale Zahlen - Festkommadarstellung
+
+Um Bruchzahlen darzustellen, kann z.B. die Festkommadarstellung benutzt werden. Es wird im
+Vorfeld definiert, an welcher Stelle sich das Komma befindet, bzw. Wie viele Vorkomma- und wie
+viele Nachkommastellen die Zahl beinhaltet.
+Die Wertigkeit hinter der Kommastelle wird entsprechend der 2er-Potenzen fortgeführt.
+Hier wird von einer **Festkommazahl mit 4 Nachkommastellen („Q4“)** ausgegangen.
+
+## Stellenwerttabelle (8 Bits)
+
+| Stelle | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 |
+|--------|---|---|---|---|---|---|---|---|
+| Wertigkeit 2er-Potenz | 2³ | 2² | 2¹ | 2⁰ | 2⁻¹ | 2⁻² | 2⁻³ | 2⁻⁴ |
+| Wertigkeit dezimal | 8 | 4 | 2 | 1 | 0,5 | 0,25 | 0,125 | 0,0625 |
+
+::: aufgabe 
+
+<Answer type="state" webKey="34e3ebff-a570-45a9-8699-7118602609ab" />
+Rechne die Zahlen vom Binärsystem in das Dezimalsystem bzw. umgekehrt um:
+
+<Answer type="string" webKey="133b6bf4-0385-4f37-b827-b0b1cde8cdca" solution="10,75">
+
+$10101100_2=$
+
+</Answer>
+
+<Answer type="string" webKey="2a04f2d0-c6d1-4e7d-8445-4e81df9d3de7" solution="1,0625">
+
+$00010001_2=$
+
+</Answer>
+
+<Answer type="string" webKey="19e1ebc4-5774-4c82-b7f3-4eda5f740cfc" solution="01100110">
+
+$6,375_{10}=$
+
+</Answer>
+
+<Answer type="string" webKey="0428c55e-f6db-43ad-8e9e-8c5ee9e71ea0" solution="10011111">
+
+$9,9375_{10}=$
+
+</Answer>
+
+<Answer type="text" webKey="0996c405-2cd5-4ef1-bf58-852b4e6f0326">
+Welcher Zahlbereich lässt sich mit 8 Bit, davon 4 Nachkommastellen darstellen?
+</Answer>
+
+<Solution webKey="0996c405-2cd5-4ef1-bf58-852b4e6f0326">
+
+Mit 4 Nachkommastellen: 0,0625, allgemein: abhängig von Anzahl der
+Nachkommastellen k. Kleinste Differenz (=Auflösung) liegt bei $2^{-k}$.
+
+</Solution>
+
+:::
+:::
