@@ -6,13 +6,6 @@ sidebar_custom_props:
 
 # Lernziele Codes und Daten
 
-:::finding Prüfung
-- Die Prüfung findet auf Papier statt
-- Erlaubte Hilfsmittel: Taschenrechner (*Codierungs-Tabellen werden zur Verfügung gestellt*)
-- Gewichtung der Note: 1
-- Zeit: 60 Minuten
-:::
-
 Nicht Prüfungsrelevante Kapitel:
 - Anwendungen: 3. QR-Code
 

@@ -6,17 +6,6 @@ sidebar_custom_props:
 ---
 # Lernziele Datenbanken
 
-Dauer
-: ca. 90 Minuten
-Benotung
-: Die note zählt ganz
-Teile
-: __Theorie__ (ca. 30 Minuten), ohne Hilfsmittel, auf Papier
-: __Excel__ (ca. 30 Minuten), Openbook, Laptop, Excel, Webseite. 
-: :mdi-alert--yellow: keine Chats/Kommunikation mit anderen Personen
-: __SQL__ (ca. 30 Minuten), Openbook, Laptop, db-sql.ch, Webseite. 
-: :mdi-alert--yellow: keine Chats/Kommunikation mit anderen Personen
-
 :::info Theoretischer Teil
 
 Material
@@ -36,25 +25,6 @@ Material
 - Sie verstehen (simple) SQL Abfragen und erklären in eigenen Worten, was sie machen/bedeuten.
 :::
 
-::::info Praktischer Teil: Excel
-
-Kapitel:
-: Grundlagen, Zufallszahlen, Funktionsgraphen, FizzBuzz, Wurfweite, Excel Diagramme
-: **ohne**: *CSV Datem Importieren*, *Galton Brett*
-
-- Sie verstehen den Unterschied zwischen absoluten und relativen Bezügen in Excel. (z.B. `A1` vs. `$A1` vs. `$A$1`) und wenden diese korrekt an.
-- Sie übersetzen gegebene Formeln in Excel-Formeln.
-- Sie berechnen Durschnittswerte von Spalten, Zeilen oder Zellenbereichen.
-- Sie können die Funktionen `SUMME`, `MITTELWERT`, `MAX`, `MIN` anwenden.
-- Sie wenden die Funktionen `WENN`, `REST` und `TEXTKETTE` korrekt an.
-- Sie stellen gegebene Daten mit einem passenden Diagramm (Liniendiagramm, Balkendiagramm, Kreisdiagramm) dar und beschriften das Diagramm korrekt (Titel, Achsenbeschriftung, Legende, Anzahl Datenpunkte $n$).
-
-:::danger Nicht zugelassene Hilfsmittel
-- Chat/Kommunikation mit anderen Personen
-:::
-::::
-
-
 ::::info Praktischer Teil: SQL (db-sql.ch)
 
 Kapitel:
@@ -65,8 +35,3 @@ Kapitel:
 - Sie können die folgenden Operatoren in SQL-Abfragen verwenden: `=`, `<>`, `>`, `<`, `>=`, `<=`, `LIKE`, `ILIKE`, `AND`, `OR`, `NOT`.
 - Sie können die Anzahl Datensätze einer Tabelle mit `COUNT(*)` ermitteln, sowie die Aggregierten Werte `MAX()`, `MIN()`, `SUM()`, `AVG()` bestimmen.
 - Sie suchen nach übereinstimmenden Texten mit `LIKE` / `ILIKE` und wenden dabei auch die Platzhalter `%` an.
-
-:::danger Nicht zugelassene Hilfsmittel
-- Chat/Kommunikation mit anderen Personen
-:::
-::::

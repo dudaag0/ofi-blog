@@ -4,13 +4,6 @@ sidebar_custom_props:
 ---
 # Lernziele
 
-Dauer
-: 60 Minuten
-Benotung
-: Die Note zählt ganz
-Hilfsmittel
-: Keine
-
 :::note Prüfungsstoff
 - Sie kennen das Prinzip sowie die Vorteile eines Schichten-Modells und können dies in eigenen Worten erklären
 - Sie kennen die vier Schichten des *TCP/IP-Schichtenmodells* und deren Reihenfolge
@@ -32,6 +25,3 @@ Hilfsmittel
 :::
 
 
-:::caution Unterrichtsinhalte
-An der Prüfung können auch Inhalte/Diskussionen/Experimente zu den obigen Themen aufgegriffen werden, welche nur im Unterricht behandelt/diskutiert wurden.
-:::
