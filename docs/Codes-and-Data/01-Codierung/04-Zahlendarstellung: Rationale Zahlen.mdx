@@ -1,0 +1,135 @@
+# Zahlendarstellung: Rationale Zahlen - Festkommadarstellung
+
+Um Bruchzahlen darzustellen, kann z.B. die Festkommadarstellung benutzt werden. Es wird im
+Vorfeld definiert, an welcher Stelle sich das Komma befindet, bzw. Wie viele Vorkomma- und wie
+viele Nachkommastellen die Zahl beinhaltet.
+Die Wertigkeit hinter der Kommastelle wird entsprechend der 2er-Potenzen fortgeführt.
+Hier wird von einer **Festkommazahl mit 4 Nachkommastellen („Q4“)** ausgegangen.
+
+## Stellenwerttabelle (8 Bits)
+
+| Stelle | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 |
+|--------|---|---|---|---|---|---|---|---|
+| Wertigkeit 2er-Potenz | 2³ | 2² | 2¹ | 2⁰ | 2⁻¹ | 2⁻² | 2⁻³ | 2⁻⁴ |
+| Wertigkeit dezimal | 8 | 4 | 2 | 1 | 0,5 | 0,25 | 0,125 | 0,0625 |
+
+:::aufgabe 
+
+<Answer type="state" webKey="34e3ebff-a570-45a9-8699-7118602609ab" />
+Rechne die Zahlen vom Binärsystem in das Dezimalsystem bzw. umgekehrt um:
+
+<Answer type="string" webKey="133b6bf4-0385-4f37-b827-b0b1cde8cdca" solution="10,75">
+
+$10101100_2=$
+
+</Answer>
+
+<Answer type="string" webKey="2a04f2d0-c6d1-4e7d-8445-4e81df9d3de7" solution="1,0625">
+
+$00010001_2=$
+
+</Answer>
+
+<Answer type="string" webKey="19e1ebc4-5774-4c82-b7f3-4eda5f740cfc" solution="01100110">
+
+$6,375_{10}=$
+
+</Answer>
+
+<Answer type="string" webKey="0428c55e-f6db-43ad-8e9e-8c5ee9e71ea0" solution="10011111">
+
+$9,9375_{10}=$
+
+</Answer>
+
+:::
+---
+:::aufgabe
+
+Welcher Zahlbereich lässt sich mit 8 Bit, davon 4 Nachkommastellen darstellen?
+<Answer type="text" webKey="0996c405-2cd5-4ef1-bf58-852b4e6f0326" />
+
+
+<Solution webKey="0996c405-2cd5-4ef1-bf58-852b4e6f0326">
+
+Mit 4 Nachkommastellen: 0,0625, allgemein: abhängig von Anzahl der
+Nachkommastellen k. Kleinste Differenz (=Auflösung) liegt bei $2^{-k}$.
+
+</Solution>
+
+:::
+
+:::aufgabe
+
+<Answer type="state" webKey="0664d4a9-3c06-40fc-9511-13cb944e6ee0" />
+
+Wieso lässt sich z.B. \(0{,}1_{10}\) nur näherungsweise im Binärsystem darstellen?
+
+<Answer type="text" webKey="e834500a-c633-4a0d-a48b-cd77f7e318b8" />
+
+<Solution webKey="e834500a-c633-4a0d-a48b-cd77f7e318b8">
+Man findet für 0,1 keine genaue Summe aus 2er-Potenzen. Bzw. es gibt keine Auflösung
+2<sup>-k</sup>, bei der 0,1 ein Vielfaches davon ist!
+
+Es ist:  
+\(0{,}1_{10} \approx 0{,}0001100_2\)
+</Solution>
+
+:::
+---
+
+:::aufgabe
+<Answer type="state" webKey="e0db41d2-f642-4df0-894c-345b23ed3dd4" />
+Berechne die Summe (binär) zweier Q4-Zahlen auf Papier und kontrolliere das Ergebnis, indem du die Werte ins Dezimalsystem umrechnest:
+
+1.  
+\(00111100_2\)  
+\(01000101_2\)  
+________
+
+
+
+\(3{,}75_{10} + 4{,}3125_{10} = 8{,}0625_{10} = 10000001_2\)
+
+---
+
+2.  
+\(00011000_2\)  
+\(00001000_2\)  
+________
+
+\(1{,}5_{10} + 0{,}5_{10} = 2_{10} = 00100000_2\)
+
+:::
+---
+:::aufgabe
+Berechne mit schriftlicher Multiplikation das Produkt der beiden Q4-Zahlen.
+
+Vergleiche dein Ergebnis mit den Dezimalzahlen: \(00001000_2 \cdot 00010000_2 =\)
+
+schriftliche Multiplikation liefert:  
+\(10000000_2 = 8_{10}\)
+
+Dezimal war die Multiplikation:  
+\(0{,}5_{10} \cdot 1_{10}\)
+
+→ richtige Lösung wäre:  
+\(0{,}5_{10} = 00001000_2\)
+:::
+---
+:::aufgabe
+<Answer type="state" webKey="0219372c-e40f-4440-9961-71211f131b17" />
+Warum liefert die schriftliche Multiplikation ein falsches Ergebnis? Wie muss man dieses korrigieren?
+
+<Answer type="text" webKey="cfebba16-125f-409e-a34a-3510f13d8a89" />
+
+<Solution webKey="cfebba16-125f-409e-a34a-3510f13d8a89">
+Betrachtet man das niederwertigste Bit \(= 2^{-4}\) und multipliziert dieses mit dem zweitniederwertigsten Bit \(= 2^{-4}\), so erhält man im Ergebnis als niederwertigstes Bit \(2^{-8}\)!
+
+Das Ergebnis wäre also eine Festkommazahl mit 8 Nachkommastellen (Q8).
+
+Um das Ergebnis wieder in eine Q4-Festkommazahl zu überführen, muss man also die letzten 4 Bit (von \(2^{-5}\) bis \(2^{-8}\)) abschneiden. (Anzahl entspricht den Nachkommastellen)
+
+\(10000000_2 \rightarrow 00001000_2 = 0{,}5_{10}\)
+</Solution>
+:::

@@ -1,21 +1,7 @@
 {
   "LF": [
-    {
-      "from": "docs/Codes-and-Data/",
-      "to": "versioned_docs/version-LF/01 Daten und Codierung",
-      "ignore": [
-        "_category_.json",
-        "*.txt"
-      ]
-    },
-    {
-      "from": "docs/network2/",
-      "to": "versioned_docs/version-LF/02 Netzwerke",
-      "ignore": [
-        "_category_.json",
-        "*.txt"
-      ]
-    }
+    
+    
   ],
   "BF": []
 }

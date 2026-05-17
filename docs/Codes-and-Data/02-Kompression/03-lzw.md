@@ -5,7 +5,7 @@ sidebar_custom_props:
 # 3 LZW: Wörterbuchverfahren
 
 ## LZW Algorithmus
-[@pdf](./assets/04_LZW%20Algorithmus.pdf)
+[@pdf](./assets/04_LZW_Algorithmus.pdf)
 
 ## LZW Aufgabenblatt
 [@pdf](./assets/04_lzw.pdf)

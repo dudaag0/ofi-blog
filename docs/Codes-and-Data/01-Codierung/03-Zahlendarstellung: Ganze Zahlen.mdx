@@ -1,0 +1,91 @@
+# 3. Zahlendarstellung: Ganze Zahlen – Zweierkomplement ℤ
+
+Mithilfe des sogenannten Zweierkomplements lassen sich negative Binärzahlen darstellen.  
+Hierbei ist jeweils das Bit mit der höchsten Wertigkeit als negativer Wert definiert. Als Beispiel anhand eines 8-Bit-Wertes:
+
+## Stellenwerttabelle (8 Bit)
+
+| Stelle | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 |
+|--------|---|---|---|---|---|---|---|---|
+| Wertigkeit (2er-Potenz) | -2⁷ | 2⁶ | 2⁵ | 2⁴ | 2³ | 2² | 2¹ | 2⁰ |
+| Wertigkeit (dezimal) | -128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+
+---
+
+:::aufgabe Wertebereich
+
+<Answer type="state" webKey="abfe1c1c-c1b9-425f-9b13-3fb6ea7e9831" />
+
+Welcher Zahlbereich lässt sich so mit 8 Bit darstellen?
+
+<Answer type="text" webKey="a98cf4a1-e7ea-4860-a3d9-b61233b5d51f" />
+
+<Solution webKey="a98cf4a1-e7ea-4860-a3d9-b61233b5d51f">
+
+</Solution>
+
+Welcher Zahlenbereich lässt sich so mit n Bit darstellen?
+<Answer type="string" webKey="1d264ee4-b30f-433c-981d-d84c2d474f98" />
+
+<Solution webKey="1d264ee4-b30f-433c-981d-d84c2d474f98">
+
+</Solution>
+:::
+
+---
+
+:::aufgabe Umrechnung
+
+<Answer type="state" webKey="bfc550b0-2d01-42e3-bd25-5831706a37fc" />
+
+Rechne die Zahlen vom Binärsystem in das Dezimalsystem bzw. umgekehrt um:
+
+<Answer type="string" webKey="10348064-946e-40e6-9c51-d054a089cf1d" solution="-86">
+
+$10101010_2=$
+
+</Answer>
+
+<Answer type="string" webKey="af87b375-b2b2-48e4-a5dc-be141885a6ca" solution="-16">
+
+$11110000_2=$
+
+</Answer>
+
+<Answer type="string" webKey="3dabf3c8-767f-4369-a3e1-970763860c4f" solution="10011110">
+
+$-98_{10}=$
+
+</Answer>
+
+<Answer type="string" webKey="540f4e1a-f23b-46bc-8a4c-ba1545175ba9" solution="11111111">
+
+$-1_{10}=$
+
+</Answer> 
+
+:::
+---
+
+:::aufgabe 
+
+Wie kann man anhand einer Binärzahl im Zweierkomplement erkennen, ob diese positiv oder negativ ist?
+<Answer type="text" webKey="7a4651ab-4f8b-4da8-8a7f-707a027e2248" />
+
+<Solution webKey="7a4651ab-4f8b-4da8-8a7f-707a027e2248">
+
+Höchstwertigstes Bit 0 → positiv, höchstwertigstes Bit 1 → negativ, da die Summe der
+Werte alle nachfolgenden Ziffern auf jeden Fall kleiner ist als die negative Wertigkeit der
+ersten Stelle
+
+</Solution>
+
+Wie kann man mithilfe des Zweierkomplements aus einer positiven die dazu negative Zahl bilden?
+<Answer type="text" webKey="8da258e3-b28f-495b-a223-5be9915a1799" /> 
+
+<Solution webKey="8da258e3-b28f-495b-a223-5be9915a1799">
+
+Man dreht alle Ziffern um und rechnet danach +1
+
+</Solution>
+:::
