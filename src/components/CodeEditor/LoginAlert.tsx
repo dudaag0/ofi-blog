@@ -12,7 +12,7 @@ const LoginAlert = observer(() => {
   return (
     <div className={styles.noLoginAlert}>
       <span className="badge badge--danger">⚠️ Nicht Eingeloggt</span> Speichern
-      nur mit GBSL-Login möglich. <Link to="/login">Login</Link>
+      nur mit Login möglich. <Link to="/login">Login</Link>
     </div>
   );
 });
