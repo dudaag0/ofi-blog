@@ -1,7 +1,10 @@
 {
   "LF": [
-    
-    
+    {
+      "from": "docs/Codes-and-Data/",
+      "to": "versioned_docs/version-LF/01 Daten und Codierung",
+      "ignore": []
+    }
   ],
   "BF": []
 }
