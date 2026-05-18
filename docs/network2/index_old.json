@@ -1,0 +1,273 @@
+{
+  "id": 249094,
+  "title": "Netzwerke",
+  "cover": "cover.svg",
+  "subtitle": "Kommunikation zwischen Computern",
+  "abstract": "in Arbeit",
+  "base": "mer/of-in/network",
+  "icon": "mdi-lan",
+  "page": "README",
+  "items": [
+    {
+      "id": 146140,
+      "title": "1 Schichtenmodell",
+      "page": "1-layers/",
+      "items": [
+        {
+          "id": 80064,
+          "title": "1.1 Anwendungsschicht",
+          "page": "1-layers/1-application/"
+        },
+        {
+          "id": 463589,
+          "title": "1.2 Transportschicht",
+          "page": "1-layers/2-transport/"
+        },
+        {
+          "id": 750322,
+          "title": "1.3 Vermittlungsschicht",
+          "page": "1-layers/3-network/"
+        },
+        {
+          "id": 783655,
+          "title": "1.4 Physikalische Schicht",
+          "page": "1-layers/4-physical/"
+        },
+        {
+          "id": 643307,
+          "title": "1.5 Schichten und Adressen",
+          "page": "1-layers/5-addresses/"
+        }
+      ]
+    },
+    {
+      "id": 352410,
+      "title": "2 Filius-Workshop",
+      "page": "2-filius/",
+      "items": [
+        {
+          "id": 707583,
+          "title": "Installation auf Windows",
+          "icon": "mdi-microsoft-windows",
+          "page": "2-filius/windows/"
+        },
+        {
+          "id": 794849,
+          "title": "Installation auf macOS",
+          "icon": "mdi-apple",
+          "page": "2-filius/macos/"
+        },
+        {
+          "id": 333570,
+          "title": "2.1 Peer-to-Peer-Netzwerk",
+          "page": "2-filius/1-peer/"
+        },
+        {
+          "id": 244530,
+          "title": "2.2 Ping",
+          "page": "2-filius/2-ping/"
+        },
+        {
+          "id": 650841,
+          "title": "2.3 Switch",
+          "page": "2-filius/3-switch/"
+        },
+        {
+          "id": 669197,
+          "title": "2.4 Client-Server-Prinzip",
+          "page": "2-filius/4-client-server/"
+        },
+        {
+          "id": 217936,
+          "title": "2.5 Router",
+          "page": "2-filius/5-router/"
+        },
+        {
+          "id": 406540,
+          "title": "2.6 Gateway",
+          "page": "2-filius/6-gateway/"
+        },
+        {
+          "id": 407393,
+          "title": "2.7 Das Web",
+          "page": "2-filius/7-web/"
+        },
+        {
+          "id": 720668,
+          "title": "2.8 Webserver einrichten",
+          "page": "2-filius/8-webserver/"
+        },
+        {
+          "id": 433326,
+          "title": "2.9 Webserver testen",
+          "page": "2-filius/9-webserver/"
+        },
+        {
+          "id": 314079,
+          "title": "2.10 DNS-Server",
+          "page": "2-filius/A-dns/"
+        },
+        {
+          "id": 872763,
+          "title": "2.11 DNS auf Clients",
+          "page": "2-filius/B-dns/"
+        },
+        {
+          "id": 165906,
+          "title": "2.12 DNS testen",
+          "page": "2-filius/C-dns/"
+        },
+        {
+          "id": 473840,
+          "title": "2.13 Häufige Probleme",
+          "page": "2-filius/D-problems/"
+        }
+      ]
+    },
+    {
+      "id": 946760,
+      "title": "3 Begriffe",
+      "page": "3-terms/",
+      "items": [
+        {
+          "id": 427744,
+          "title": "MAC-Adressen",
+          "icon": "construction",
+          "page": "3-terms/2-mac/"
+        },
+        {
+          "id": 204393,
+          "title": "IP-Adressen",
+          "page": "3-terms/3-ip/"
+        },
+        {
+          "id": 240119,
+          "title": "Ports",
+          "page": "3-terms/4-ports/"
+        }
+      ]
+    },
+    {
+      "id": 8857,
+      "title": "4 Übungen",
+      "page": "4-exercises/",
+      "items": [
+        {
+          "id": 865245,
+          "title": "Meine Adressen",
+          "icon": "exercise",
+          "page": "4-exercises/1-my-address/"
+        },
+        {
+          "id": 110995,
+          "title": "Routing",
+          "page": "4-exercises/2-routing/"
+        }
+      ]
+    },
+    {
+      "id": 40004,
+      "title": "5 Webtechnologien",
+      "icon": "mdi-star",
+      "page": "5-web/",
+      "items": [
+        {
+          "id": 302696,
+          "title": "HTML",
+          "page": "5-web/1-0-html",
+          "items": [
+            {
+              "id": 544614,
+              "title": "Grundstruktur",
+              "page": "5-web/1-1-structure"
+            },
+            {
+              "id": 174811,
+              "title": "Textstruktur",
+              "page": "5-web/1-2-text-structure"
+            },
+            {
+              "id": 260704,
+              "title": "Zeichenformatierung",
+              "page": "5-web/1-3-inline"
+            },
+            {
+              "id": 262538,
+              "title": "Verknüpfungen",
+              "page": "5-web/1-4-links"
+            },
+            {
+              "id": 753659,
+              "title": "Listen",
+              "page": "5-web/1-5-list"
+            },
+            {
+              "id": 786505,
+              "title": "Tabellen",
+              "page": "5-web/1-6-table"
+            },
+            {
+              "id": 59664,
+              "title": "Zusammenfassung",
+              "page": "5-web/1-7-overview"
+            }
+          ]
+        },
+        {
+          "id": 1471,
+          "title": "CSS",
+          "page": "5-web/2-0-css",
+          "items": [
+            {
+              "id": 256309,
+              "title": "CSS-Syntax",
+              "page": "5-web/2-1-css-syntax"
+            },
+            {
+              "id": 357172,
+              "title": "Farben",
+              "page": "5-web/2-2-colours"
+            },
+            {
+              "id": 858079,
+              "title": "Textformatierung",
+              "page": "5-web/2-3-text"
+            },
+            {
+              "id": 159780,
+              "title": "Hintergrund",
+              "page": "5-web/2-4-background"
+            },
+            {
+              "id": 766720,
+              "title": "Box-Modell",
+              "page": "5-web/2-5-box-model"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 942681,
+      "title": "🎯 Lernziele",
+      "page": "0-goals/"
+    },
+    {
+      "id": 85829,
+      "title": "Material für Lehrer*innen",
+      "page": "teaching/",
+      "items": [
+        {
+          "id": 411898,
+          "title": "Filius Advanced",
+          "page": "teaching/filius-advanced/"
+        },
+        {
+          "id": 252384,
+          "title": "Bilder",
+          "page": "teaching/images"
+        }
+      ]
+    }
+  ]
+}

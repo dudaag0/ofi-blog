@@ -1,0 +1,66 @@
+Solutions
+=========
+
+Problem 1
+---------
+File:    layer-1_not-connected.fls
+Layer:   1
+Problem:
+Der DNS-Server ist nicht per Kabel mit dem Switch verbunden (es sieht nur so aus).
+
+
+Problem 2
+---------
+File:    layer-2_gateway-missing.fls
+Layer:   2
+Problem:
+Bei Client 1 ist kein Gateway eingetragen.
+
+
+Problem 3
+---------
+File:    layer-3_dns-not-running.fls
+Layer:   3
+Problem:
+DNS-Server ist nicht gestartet.
+
+
+Problem 4
+---------
+File:    layer-4_wrong-ip-in-dns.fls
+Layer:   4
+Problem:
+Im DNS-Server ist die falsche IP (des Webservers) eingetragen.
+
+
+Problem 5
+---------
+File:    layer-3_webserver-not-running.fls
+Layer:   3
+Problem:
+Webserver ist nicht gestartet.
+
+
+Problem 6
+---------
+File:    layer-2_wrong-gateway.fls
+Layer:   2
+Problem:
+Bei Client 2 ist die falsche Gateway-IP eingetragen.
+
+
+Problem 7
+---------
+File:    layer-1_no-router.fls
+Layer:   1
+Hier fehlt der Router, um die zwei Netzwerke zu verbinden. Die Switches sind direkt verbunden.
+
+
+Problem 8
+---------
+File:    layer-4_html-errors.fls
+Layer:   4
+Problem:
+HTML-Fehler:
+- Fehler im Link in der index.html bei www.nachschlagewerk.ch (abkürzungen.html statt abkuerzungen.html)
+- Fehler im Dateinamen des Bildes bei www.reisen.ch (fuss-im-sand.jpg statt sand.jpg)
